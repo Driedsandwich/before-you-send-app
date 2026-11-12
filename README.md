@@ -123,6 +123,12 @@ Tests cover binary stdin, selective keep, explicit all-data removal, fresh inspe
 
 This revision was prepared on **2026-11-13** in the supplied workspace. It adds the shared core and deterministic single-file build, local CLI and MCP interfaces, the explicit all-data removal path, test-first logs, further regression coverage and these usage/limitations notes. The starting prototype was supplied as an existing repository snapshot; its earlier creation date and competition eligibility were not independently verified. No claim is made that the entire prototype originated in this revision. All demo/test data used here is fictional. Nothing was published, pushed, submitted to Devpost or written to an external application.
 
+## Review on November 13, 2026
+
+- The first prototype was built on November 12, 2026, within the build window; this repository starts from it.
+- After this update, the generated `index.html` was walked through in a headless Chromium browser at desktop (1440 px) and mobile (390 px) widths, from the first screen through the sample flow, with no network requests observed and no page errors.
+- A real-world JPEG with extra data blocks (JFIF, EXIF and a Photoshop/IPTC block) was dropped into the page: the tool reported Unknown, offered **Remove all hidden data**, and the saved copy contained no APPn/COM blocks when re-read with a separate parser, and still opened as a 390 × 844 JPEG.
+
 ## Credits and AI assistance
 
 - Original prototype disclosure: prototype code and tests were generated with OpenAI Codex from written specifications and design mockups; planning, review, and browser testing used Anthropic Claude.
