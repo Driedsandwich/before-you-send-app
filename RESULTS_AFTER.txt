@@ -1,0 +1,603 @@
+Before You Send — post-implementation test run
+Session date: 2026-11-13
+Runtime: Node v22.23.4
+Command: npm test (includes build freshness check)
+Total: 97 tests; 97 passed; 0 failed; 0 skipped. All 52 original tests are unchanged.
+The 33 initially failing tests pass. Twelve further regression tests were added after implementation.
+
+
+> before-you-send@0.2.0 test
+> node scripts/build.mjs --check && node --test tests/run.cjs tests/*.test.mjs
+
+TAP version 13
+# Subtest: CORE all removes all APP/COM regions: sample
+ok 1 - CORE all removes all APP/COM regions: sample
+  ---
+  duration_ms: 11.803608
+  type: 'test'
+  ...
+# Subtest: CORE all removes all APP/COM regions: APP13
+ok 2 - CORE all removes all APP/COM regions: APP13
+  ---
+  duration_ms: 0.837575
+  type: 'test'
+  ...
+# Subtest: CORE all removes all APP/COM regions: XMP
+ok 3 - CORE all removes all APP/COM regions: XMP
+  ---
+  duration_ms: 0.694277
+  type: 'test'
+  ...
+# Subtest: CORE all removes all APP/COM regions: ICC
+ok 4 - CORE all removes all APP/COM regions: ICC
+  ---
+  duration_ms: 2.155841
+  type: 'test'
+  ...
+# Subtest: CORE all removes all APP/COM regions: MakerNote
+ok 5 - CORE all removes all APP/COM regions: MakerNote
+  ---
+  duration_ms: 0.910684
+  type: 'test'
+  ...
+# Subtest: CORE all removes all APP/COM regions: COM
+ok 6 - CORE all removes all APP/COM regions: COM
+  ---
+  duration_ms: 0.475731
+  type: 'test'
+  ...
+# Subtest: CORE removes all 16 APP types plus comments, including after a scan
+ok 7 - CORE removes all 16 APP types plus comments, including after a scan
+  ---
+  duration_ms: 0.786193
+  type: 'test'
+  ...
+# Subtest: CORE preserves compressed scan bytes, FF escapes and restart markers
+ok 8 - CORE preserves compressed scan bytes, FF escapes and restart markers
+  ---
+  duration_ms: 0.427133
+  type: 'test'
+  ...
+# Subtest: CORE all rejects truncated data, PNG, trailing data and unknown encoding
+ok 9 - CORE all rejects truncated data, PNG, trailing data and unknown encoding
+  ---
+  duration_ms: 1.27552
+  type: 'test'
+  ...
+# Subtest: CORE all rejects invalid DQT, DHT, DRI, SOS and empty scans
+ok 10 - CORE all rejects invalid DQT, DHT, DRI, SOS and empty scans
+  ---
+  duration_ms: 1.180993
+  type: 'test'
+  ...
+# Subtest: CORE all removes JFIF thumbnails and EXIF orientation together
+ok 11 - CORE all removes JFIF thumbnails and EXIF orientation together
+  ---
+  duration_ms: 0.859294
+  type: 'test'
+  ...
+# Subtest: CORE module equals embedded implementation
+ok 12 - CORE module equals embedded implementation
+  ---
+  duration_ms: 4.312753
+  type: 'test'
+  ...
+# Subtest: CORE all preserves multiple progressive scans and removes metadata between them
+ok 13 - CORE all preserves multiple progressive scans and removes metadata between them
+  ---
+  duration_ms: 0.680604
+  type: 'test'
+  ...
+# Subtest: CORE all rejects size and dimension limits
+ok 14 - CORE all rejects size and dimension limits
+  ---
+  duration_ms: 0.469464
+  type: 'test'
+  ...
+# Subtest: CLI inspects a fictional sample from a file
+ok 15 - CLI inspects a fictional sample from a file
+  ---
+  duration_ms: 74.990459
+  type: 'test'
+  ...
+# Subtest: CLI inspects binary stdin using - or omitted path
+ok 16 - CLI inspects binary stdin using - or omitted path
+  ---
+  duration_ms: 105.506186
+  type: 'test'
+  ...
+# Subtest: CLI cleans, re-reads and preserves original
+ok 17 - CLI cleans, re-reads and preserves original
+  ---
+  duration_ms: 103.540314
+  type: 'test'
+  ...
+# Subtest: CLI preserves only requested date and device groups
+ok 18 - CLI preserves only requested date and device groups
+  ---
+  duration_ms: 44.811471
+  type: 'test'
+  ...
+# Subtest: CLI clean accepts binary stdin
+ok 19 - CLI clean accepts binary stdin
+  ---
+  duration_ms: 42.726174
+  type: 'test'
+  ...
+# Subtest: CLI explicit --all removes APP13
+ok 20 - CLI explicit --all removes APP13
+  ---
+  duration_ms: 42.497825
+  type: 'test'
+  ...
+# Subtest: CLI explicit --all removes XMP
+ok 21 - CLI explicit --all removes XMP
+  ---
+  duration_ms: 44.838581
+  type: 'test'
+  ...
+# Subtest: CLI explicit --all removes ICC
+ok 22 - CLI explicit --all removes ICC
+  ---
+  duration_ms: 41.494446
+  type: 'test'
+  ...
+# Subtest: CLI explicit --all removes MakerNote
+ok 23 - CLI explicit --all removes MakerNote
+  ---
+  duration_ms: 42.006788
+  type: 'test'
+  ...
+# Subtest: CLI explicit --all removes COM
+ok 24 - CLI explicit --all removes COM
+  ---
+  duration_ms: 43.747038
+  type: 'test'
+  ...
+# Subtest: CLI rejects Unknown without explicit --all
+ok 25 - CLI rejects Unknown without explicit --all
+  ---
+  duration_ms: 78.186754
+  type: 'test'
+  ...
+# Subtest: CLI refuses malformed JPEG and PNG even with --all
+ok 26 - CLI refuses malformed JPEG and PNG even with --all
+  ---
+  duration_ms: 116.931236
+  type: 'test'
+  ...
+# Subtest: CLI rejects bad arguments, missing file, and conflicting choices
+ok 27 - CLI rejects bad arguments, missing file, and conflicting choices
+  ---
+  duration_ms: 241.356073
+  type: 'test'
+  ...
+# Subtest: CLI never overwrites originals, existing files, symlinks or hard links
+ok 28 - CLI never overwrites originals, existing files, symlinks or hard links
+  ---
+  duration_ms: 161.326186
+  type: 'test'
+  ...
+# Subtest: MCP initializes and lists both documented tool schemas
+ok 29 - MCP initializes and lists both documented tool schemas
+  ---
+  duration_ms: 36.3991
+  type: 'test'
+  ...
+# Subtest: MCP inspect matches CLI report
+ok 30 - MCP inspect matches CLI report
+  ---
+  duration_ms: 82.511702
+  type: 'test'
+  ...
+# Subtest: MCP clean supports selective keep
+ok 31 - MCP clean supports selective keep
+  ---
+  duration_ms: 45.778938
+  type: 'test'
+  ...
+# Subtest: MCP clean all re-reads unsupported metadata and writes a new file
+ok 32 - MCP clean all re-reads unsupported metadata and writes a new file
+  ---
+  duration_ms: 44.08722
+  type: 'test'
+  ...
+# Subtest: MCP reports tool failures without creating output
+ok 33 - MCP reports tool failures without creating output
+  ---
+  duration_ms: 114.545132
+  type: 'test'
+  ...
+# Subtest: MCP validates required fields, types, enums and unexpected keys
+ok 34 - MCP validates required fields, types, enums and unexpected keys
+  ---
+  duration_ms: 216.264762
+  type: 'test'
+  ...
+# Subtest: MCP handles parse errors, unknown methods/tools, notifications and ping
+ok 35 - MCP handles parse errors, unknown methods/tools, notifications and ping
+  ---
+  duration_ms: 36.804614
+  type: 'test'
+  ...
+# Subtest: CLI rejects oversized regular files and stdin without output
+ok 36 - CLI rejects oversized regular files and stdin without output
+  ---
+  duration_ms: 108.345696
+  type: 'test'
+  ...
+# Subtest: MCP rejects malformed JPEG and PNG in all mode
+ok 37 - MCP rejects malformed JPEG and PNG in all mode
+  ---
+  duration_ms: 79.464806
+  type: 'test'
+  ...
+# Subtest: MCP requires initialization and negotiates its supported version
+ok 38 - MCP requires initialization and negotiates its supported version
+  ---
+  duration_ms: 39.571953
+  type: 'test'
+  ...
+# Subtest: MCP bounds messages and recovers after an oversized line
+ok 39 - MCP bounds messages and recovers after an oversized line
+  ---
+  duration_ms: 35.99063
+  type: 'test'
+  ...
+# Subtest: NORMAL: sample contains four real EXIF groups and fictional values
+ok 40 - NORMAL: sample contains four real EXIF groups and fictional values
+  ---
+  duration_ms: 5.99511
+  type: 'test'
+  ...
+# Subtest: NORMAL: clean, re-read, preserve original and every non-EXIF byte
+ok 41 - NORMAL: clean, re-read, preserve original and every non-EXIF byte
+  ---
+  duration_ms: 7.776701
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps
+ok 42 - NORMAL: selective removal gps
+  ---
+  duration_ms: 3.408148
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal date
+ok 43 - NORMAL: selective removal date
+  ---
+  duration_ms: 2.939898
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps, date
+ok 44 - NORMAL: selective removal gps, date
+  ---
+  duration_ms: 2.902491
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal device
+ok 45 - NORMAL: selective removal device
+  ---
+  duration_ms: 4.099963
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps, device
+ok 46 - NORMAL: selective removal gps, device
+  ---
+  duration_ms: 2.529929
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal date, device
+ok 47 - NORMAL: selective removal date, device
+  ---
+  duration_ms: 2.468459
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps, date, device
+ok 48 - NORMAL: selective removal gps, date, device
+  ---
+  duration_ms: 2.532983
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal thumbnail
+ok 49 - NORMAL: selective removal thumbnail
+  ---
+  duration_ms: 3.105172
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps, thumbnail
+ok 50 - NORMAL: selective removal gps, thumbnail
+  ---
+  duration_ms: 2.46027
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal date, thumbnail
+ok 51 - NORMAL: selective removal date, thumbnail
+  ---
+  duration_ms: 2.370711
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps, date, thumbnail
+ok 52 - NORMAL: selective removal gps, date, thumbnail
+  ---
+  duration_ms: 2.437221
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal device, thumbnail
+ok 53 - NORMAL: selective removal device, thumbnail
+  ---
+  duration_ms: 4.599124
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps, device, thumbnail
+ok 54 - NORMAL: selective removal gps, device, thumbnail
+  ---
+  duration_ms: 2.388583
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal date, device, thumbnail
+ok 55 - NORMAL: selective removal date, device, thumbnail
+  ---
+  duration_ms: 2.435042
+  type: 'test'
+  ...
+# Subtest: NORMAL: selective removal gps, date, device, thumbnail
+ok 56 - NORMAL: selective removal gps, date, device, thumbnail
+  ---
+  duration_ms: 2.28537
+  type: 'test'
+  ...
+# Subtest: NORMAL: a JPEG with no metadata reports zero supported groups
+ok 57 - NORMAL: a JPEG with no metadata reports zero supported groups
+  ---
+  duration_ms: 1.882612
+  type: 'test'
+  ...
+# Subtest: NORMAL: big-endian EXIF is read and rebuilt correctly
+ok 58 - NORMAL: big-endian EXIF is read and rebuilt correctly
+  ---
+  duration_ms: 2.485028
+  type: 'test'
+  ...
+# Subtest: NORMAL: multiple date tags are one group and all removed
+ok 59 - NORMAL: multiple date tags are one group and all removed
+  ---
+  duration_ms: 3.057917
+  type: 'test'
+  ...
+# Subtest: NORMAL: orientation remains when selected identifiers are erased
+ok 60 - NORMAL: orientation remains when selected identifiers are erased
+  ---
+  duration_ms: 2.390885
+  type: 'test'
+  ...
+# Subtest: NORMAL: JFIF RGB thumbnail is genuinely removed
+ok 61 - NORMAL: JFIF RGB thumbnail is genuinely removed
+  ---
+  duration_ms: 3.297341
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: duplicate EXIF segments do not evade removal or inflate group counts
+ok 62 - AMBIGUOUS: duplicate EXIF segments do not evade removal or inflate group counts
+  ---
+  duration_ms: 6.282053
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: multiple thumbnails are one group with an accurate preview count
+ok 63 - AMBIGUOUS: multiple thumbnails are one group with an accurate preview count
+  ---
+  duration_ms: 3.72502
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: GPS plus XMP gives Unknown, never a verified zero
+ok 64 - AMBIGUOUS: GPS plus XMP gives Unknown, never a verified zero
+  ---
+  duration_ms: 2.454372
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: IPTC blocks verified download
+ok 65 - AMBIGUOUS: IPTC blocks verified download
+  ---
+  duration_ms: 1.04584
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: ICC blocks verified download
+ok 66 - AMBIGUOUS: ICC blocks verified download
+  ---
+  duration_ms: 0.990204
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: comment blocks verified download
+ok 67 - AMBIGUOUS: comment blocks verified download
+  ---
+  duration_ms: 0.974317
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: MakerNote produces Unknown
+ok 68 - AMBIGUOUS: MakerNote produces Unknown
+  ---
+  duration_ms: 1.411347
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: invalid date text is not reported as fully understood
+ok 69 - AMBIGUOUS: invalid date text is not reported as fully understood
+  ---
+  duration_ms: 1.185684
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: unrecognized or non-ASCII text is Unknown
+ok 70 - AMBIGUOUS: unrecognized or non-ASCII text is Unknown
+  ---
+  duration_ms: 1.085474
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: HTML-shaped device name remains inert text in the parser
+ok 71 - AMBIGUOUS: HTML-shaped device name remains inert text in the parser
+  ---
+  duration_ms: 1.442339
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: trailing bytes make the result Unknown
+ok 72 - AMBIGUOUS: trailing bytes make the result Unknown
+  ---
+  duration_ms: 0.995555
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: unmapped nonzero EXIF bytes are not silently ignored
+ok 73 - AMBIGUOUS: unmapped nonzero EXIF bytes are not silently ignored
+  ---
+  duration_ms: 1.323725
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: no selection does not silently remove anything
+ok 74 - AMBIGUOUS: no selection does not silently remove anything
+  ---
+  duration_ms: 1.423871
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: zero GPS denominator is Unknown
+ok 75 - AMBIGUOUS: zero GPS denominator is Unknown
+  ---
+  duration_ms: 1.542091
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS: metadata inside a retained thumbnail blocks verification
+ok 76 - AMBIGUOUS: metadata inside a retained thumbnail blocks verification
+  ---
+  duration_ms: 2.176983
+  type: 'test'
+  ...
+# Subtest: FAILURE: unsupported PNG input gives Unknown
+ok 77 - FAILURE: unsupported PNG input gives Unknown
+  ---
+  duration_ms: 0.160361
+  type: 'test'
+  ...
+# Subtest: FAILURE: empty, missing and truncated files give Unknown
+ok 78 - FAILURE: empty, missing and truncated files give Unknown
+  ---
+  duration_ms: 1.272718
+  type: 'test'
+  ...
+# Subtest: FAILURE: bad JPEG segment length is rejected
+ok 79 - FAILURE: bad JPEG segment length is rejected
+  ---
+  duration_ms: 0.203398
+  type: 'test'
+  ...
+# Subtest: FAILURE: out-of-bounds TIFF directory is rejected
+ok 80 - FAILURE: out-of-bounds TIFF directory is rejected
+  ---
+  duration_ms: 0.188578
+  type: 'test'
+  ...
+# Subtest: FAILURE: cyclic TIFF directories are rejected
+ok 81 - FAILURE: cyclic TIFF directories are rejected
+  ---
+  duration_ms: 0.285058
+  type: 'test'
+  ...
+# Subtest: FAILURE: TIFF directory entry limit is enforced
+ok 82 - FAILURE: TIFF directory entry limit is enforced
+  ---
+  duration_ms: 0.190093
+  type: 'test'
+  ...
+# Subtest: FAILURE: duplicate tag in a directory is rejected
+ok 83 - FAILURE: duplicate tag in a directory is rejected
+  ---
+  duration_ms: 0.294029
+  type: 'test'
+  ...
+# Subtest: FAILURE: unsupported TIFF field type is rejected
+ok 84 - FAILURE: unsupported TIFF field type is rejected
+  ---
+  duration_ms: 0.270334
+  type: 'test'
+  ...
+# Subtest: FAILURE: EXIF data overlapping an IFD is rejected
+ok 85 - FAILURE: EXIF data overlapping an IFD is rejected
+  ---
+  duration_ms: 0.29823
+  type: 'test'
+  ...
+# Subtest: FAILURE: file size limit is enforced
+ok 86 - FAILURE: file size limit is enforced
+  ---
+  duration_ms: 0.983206
+  type: 'test'
+  ...
+# Subtest: FAILURE: decoded dimension limit is checked before preview
+ok 87 - FAILURE: decoded dimension limit is checked before preview
+  ---
+  duration_ms: 0.26619
+  type: 'test'
+  ...
+# Subtest: FAILURE: broken embedded thumbnail prevents cleaning
+ok 88 - FAILURE: broken embedded thumbnail prevents cleaning
+  ---
+  duration_ms: 1.816832
+  type: 'test'
+  ...
+# Subtest: FAILURE: malformed mutations cannot crash the pure function
+ok 89 - FAILURE: malformed mutations cannot crash the pure function
+  ---
+  duration_ms: 92.140631
+  type: 'test'
+  ...
+# Subtest: STATIC: scripts parse; assets and network policy are self-contained
+ok 90 - STATIC: scripts parse; assets and network policy are self-contained
+  ---
+  duration_ms: 1.551031
+  type: 'test'
+  ...
+# Subtest: NORMAL: worker structured-clone round trip preserves byte input and output
+ok 91 - NORMAL: worker structured-clone round trip preserves byte input and output
+  ---
+  duration_ms: 52.28876
+  type: 'test'
+  ...
+# Subtest: UI all-data action appears only for eligible Unknown, and disables while busy
+ok 92 - UI all-data action appears only for eligible Unknown, and disables while busy
+  ---
+  duration_ms: 5.241135
+  type: 'test'
+  ...
+# Subtest: UI all-data button calls shared core and displays verified region counts and warning
+ok 93 - UI all-data button calls shared core and displays verified region counts and warning
+  ---
+  duration_ms: 3.003815
+  type: 'test'
+  ...
+# Subtest: UI blocks download if fresh verification is Unknown or regions remain
+ok 94 - UI blocks download if fresh verification is Unknown or regions remain
+  ---
+  duration_ms: 2.392271
+  type: 'test'
+  ...
+# Subtest: UI blocks download if the browser cannot decode the copy
+ok 95 - UI blocks download if the browser cannot decode the copy
+  ---
+  duration_ms: 1.270342
+  type: 'test'
+  ...
+# Subtest: UI cancellation ignores a late all-data result
+ok 96 - UI cancellation ignores a late all-data result
+  ---
+  duration_ms: 1.341645
+  type: 'test'
+  ...
+# Subtest: UI undo restores the Unknown fallback so all-data cleaning can be retried
+ok 97 - UI undo restores the Unknown fallback so all-data cleaning can be retried
+  ---
+  duration_ms: 1.687309
+  type: 'test'
+  ...
+1..97
+# tests 97
+# suites 0
+# pass 97
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2142.429969
