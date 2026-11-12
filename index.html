@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; worker-src blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light">
+<title>Before You Send — Photo inspection</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#252a31;background:#fff;font-synthesis:none;--muted:#59636e;--line:#d9dee5;--blue:#245bdb}
+*{box-sizing:border-box}body{margin:0}button,input,a{font:inherit}button,.button{min-height:48px;border:1px solid var(--blue);border-radius:4px;padding:10px 24px;background:var(--blue);color:#fff;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;line-height:1.35}button:hover,.button:hover{background:#1948b5}button:disabled{background:#e8ebef;border-color:#b8c0cb;color:#59636e;cursor:not-allowed}.secondary{background:#fff;color:var(--blue);padding:8px 16px}.secondary:hover{background:#eef3ff}.text-button{background:none;border:0;color:#252a31;text-decoration:underline;text-underline-offset:3px;padding:8px 12px;font-size:14px}.text-button:hover{background:#f1f3f6;color:#252a31}a{color:#194dbf}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--blue);outline-offset:4px}button:disabled.text-button{background:none;border:0;color:#66707a}h1,h2,p{margin:0}h1{font-size:40px;line-height:1.12;letter-spacing:-1.2px;font-weight:700}h2{font-size:36px;line-height:1.2;letter-spacing:-.8px}.shell{max-width:1536px;margin:auto;padding:0 48px 24px}.brand{font-size:28px;font-weight:750;letter-spacing:-.8px;border-bottom:1px solid var(--line);padding:8px 0}.entry{display:grid;grid-template-columns:minmax(270px,1fr) minmax(240px,1.3fr) auto;align-items:center;gap:28px;padding:16px 0;border-bottom:1px solid var(--blue)}.drop{border:1px dashed #8b99b1;color:#252a31;background:#fff;gap:12px;font-weight:500;width:100%;min-height:54px}.drop:hover,.drop.drag{background:#eef3ff}.drop svg{width:30px;height:30px;flex:none;color:var(--muted)}.privacy{font-size:16px;color:var(--muted);border-left:1px solid var(--line);padding-left:28px;line-height:1.5}.steps{display:flex;gap:24px;list-style:none;padding:0;margin:16px 0;color:var(--muted);font-size:14px}.steps li[aria-current="step"]{font-weight:700;color:#252a31}.steps span{display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;border:1px solid #a1aab7;border-radius:50%;margin-right:6px}.title-row{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:16px 0 22px}.subtle{color:var(--muted);font-size:14px;line-height:1.5}.demo-label{font-size:16px;color:var(--muted)}.empty{border-bottom:1px solid var(--line);padding:32px 0 40px;max-width:760px}.empty p:first-child{font-size:22px;font-weight:600;margin-bottom:12px}.empty p{line-height:1.65}.empty .subtle{margin-top:18px}.file-summary{display:flex;align-items:center;gap:24px;margin:0 0 16px;min-width:0}.preview{display:block;width:150px;height:76px;object-fit:contain;background:#f1f2f4;border-radius:2px}.file-details{border-left:1px solid var(--line);padding:8px 0 8px 24px;min-width:0}.file-name{font-size:24px;font-weight:700;overflow-wrap:anywhere}.file-status{font-size:18px;color:var(--muted);margin-left:12px;font-weight:400}.file-meta{margin-top:4px}.notice{padding:14px 16px;border:1px solid #a3adba;border-left:4px solid #59636e;margin:16px 0;line-height:1.55}.notice ul{padding-left:22px;margin:6px 0}.notice h2{font-size:20px;letter-spacing:0}.choices-help{display:flex;justify-content:space-between;gap:16px;align-items:center;margin:4px 0 8px}.findings{width:100%;border-collapse:collapse;table-layout:fixed;line-height:1.45}.findings th,.findings td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}.findings thead th{color:#505968;font-size:16px;border-top:1px solid var(--line);font-weight:700}.findings tbody th{font-size:18px;font-weight:700}.findings .value,.findings .reason{color:#414b59}.findings th:nth-child(1){width:23%}.findings th:nth-child(2){width:29%}.findings th:nth-child(3){width:33%}.findings th:nth-child(4){width:15%}.choice{display:flex;gap:10px;align-items:center;min-height:44px;margin:-8px 0;cursor:pointer;font-size:16px;white-space:nowrap}.choice input{appearance:auto;accent-color:var(--blue);width:22px;height:22px;flex:none;margin:0}.choice-note{display:block;font-size:12px;color:var(--muted);margin-top:4px}.actions{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}.actions p{color:#414b59}.actions .subtle{font-size:13px;margin-top:4px}.action-buttons{display:flex;gap:12px;align-items:center}.result{display:grid;grid-template-columns:.95fr 1.15fr;gap:36px;padding:20px 0;border-bottom:1px solid var(--line)}.result-copy{border-right:1px solid var(--line);padding-right:28px}.result-copy h2{margin:8px 0}.result-copy .button{margin-top:12px}.result-copy .text-button{margin-top:8px}.comparison{width:100%;border-collapse:collapse;align-self:start;font-size:16px}.comparison th,.comparison td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:center}.comparison th:first-child{text-align:left;width:52%;overflow-wrap:anywhere}.comparison thead{color:#505968}.limit{font-size:16px;line-height:1.5;margin-top:18px}.scope{margin-top:14px;color:var(--muted);font-size:14px;line-height:1.6}.scope summary{cursor:pointer;min-height:44px;display:list-item;padding:10px 0;color:#252a31;font-weight:600}.scope p{margin-bottom:10px;max-width:920px}.status-line{display:flex;gap:16px;align-items:center;min-height:30px;color:#414b59;font-size:14px;margin:10px 0}.busy-icon{width:14px;height:14px;border:2px solid #99a1ac;border-top-color:#252a31;border-radius:50%;animation:spin 1s linear infinite;flex:none}@keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.busy-icon{animation:none}}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:1000px){.shell{padding-left:28px;padding-right:28px}.entry{gap:16px;grid-template-columns:1fr auto}.drop{grid-column:1/-1}.privacy{border:0;padding:0}.findings .choice{font-size:14px}.findings th:nth-child(4){width:18%}h1{font-size:34px}.result{gap:24px}h2{font-size:30px}}
+@media(max-width:600px){.shell{padding:0 16px 24px}.brand{font-size:21px;padding:8px 0}.entry{gap:10px 12px;padding:12px 0}.drop{font-size:15px;min-height:48px;padding:8px}.drop svg{width:25px;height:25px}.privacy{font-size:12px}.entry>button:last-child{font-size:12px;min-height:44px;padding:8px 12px;background:white;color:var(--blue)}.steps{gap:12px;justify-content:space-between;font-size:12px;margin:14px 0}.steps span{width:20px;height:20px;margin-right:4px}.title-row{display:block;margin:16px 0}.title-row h1{font-size:26px;letter-spacing:-.6px}.demo-label{font-size:12px;margin-top:6px}.file-summary{gap:14px;margin:18px 0}.preview{width:116px;height:64px}.file-details{padding:4px 0 4px 14px}.file-name{font-size:18px}.file-status{display:block;font-size:14px;margin:3px 0}.file-meta{font-size:12px}.choices-help{align-items:start;gap:8px}.choices-help p{font-size:12px}.choices-help button{font-size:12px;padding:4px 8px;flex:none;max-width:88px}.findings{display:block;font-size:14px}.findings thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.findings tbody{display:block}.findings tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 88px;gap:6px 10px;padding:14px 0;border-bottom:1px solid var(--line)}.findings tbody tr:first-child{border-top:1px solid var(--line)}.findings th,.findings td{display:block;width:auto!important;border:0;padding:0}.findings tbody th{font-size:15px;grid-column:1;grid-row:1}.findings .value{grid-column:2;grid-row:1}.findings .reason{grid-column:1/3;grid-row:2;font-size:13px;line-height:1.5}.findings .select-cell{grid-column:3;grid-row:1/3;align-self:center}.choice{gap:6px;margin:0;min-height:44px;font-size:13px!important}.choice input{width:21px;height:21px}.choice-note{font-size:11px}.actions{display:block;padding:16px 0}.actions p{font-size:14px}.actions .action-buttons{position:fixed;bottom:0;left:0;right:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:white;border-top:1px solid var(--line);z-index:3}.actions .action-buttons button{width:100%;min-height:50px}.has-file{padding-bottom:100px}.result{display:flex;flex-direction:column;gap:14px;padding:18px 0}.result-copy{border:0;padding:0}.result-copy h2{font-size:25px}.result-copy .subtle{font-size:12px}.result-copy .button{font-size:14px;min-height:44px}.comparison{font-size:14px}.comparison th,.comparison td{padding:6px 4px}.comparison th:first-child{width:52%}.limit{font-size:14px}.scope{font-size:13px}.notice{font-size:14px}.empty{padding:20px 0 28px}.empty p:first-child{font-size:20px}.empty p{font-size:14px}.status-line{font-size:13px}.status-line button{padding:8px;min-height:44px}}
+@media(max-width:350px){.entry{grid-template-columns:1fr}.privacy{grid-column:1}.entry>button:last-child{width:100%}.steps{flex-wrap:wrap}.findings tr{grid-template-columns:minmax(0,1fr) 88px}.findings tbody th{grid-column:1;grid-row:1}.findings .value{grid-column:1;grid-row:2}.findings .reason{grid-column:1;grid-row:3}.findings .select-cell{grid-column:2;grid-row:1/4}.file-summary{gap:8px}.preview{width:80px}.file-details{padding-left:8px}}
+</style>
+</head>
+<body>
+<div class="shell" id="shell">
+<header>
+  <div class="brand">Before You Send</div>
+  <div class="entry" id="dropzone">
+    <button class="drop" id="choose" type="button" aria-describedby="file-hint"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M16 22V4m-7 8 7-8 7 8M5 20v8h22v-8"/></svg>Drop a photo or try the sample</button>
+    <p class="privacy">Nothing leaves your device. No sign-up. No cost.</p>
+    <button type="button" id="sample">Try sample photo</button>
+    <input type="file" id="file" accept="image/jpeg,.jpg,.jpeg" hidden aria-label="Choose a JPEG photo">
+  </div>
+</header>
+<main>
+  <ol class="steps" aria-label="Photo inspection steps"><li aria-current="step"><span>1</span>Choose photo</li><li><span>2</span>Review &amp; remove</li><li><span>3</span>Check &amp; download</li></ol>
+  <div class="title-row"><h1 id="report-title" tabindex="-1">Photo inspection report</h1><p class="demo-label" id="demo-label" hidden>Sample demo • Fictional data</p></div>
+  <section class="empty" id="empty" aria-label="Get started">
+    <p>Start with “Try sample photo”.</p>
+    <p>See which hidden fields a photo carries, choose what to remove, then download a separate copy. The sample contains fictional location, date, device, and thumbnail data.</p>
+    <p class="subtle" id="file-hint">Or choose / drop one JPEG. Up to 12 MiB and 24 megapixels. No upload, account, or setup.</p>
+  </section>
+  <div class="status-line"><span id="spinner" class="busy-icon" aria-hidden="true" hidden></span><p id="status" role="status" aria-live="polite" aria-atomic="true">Ready. Choose a photo or try the sample.</p><button type="button" class="secondary" id="cancel" hidden>Cancel</button></div>
+  <section id="notice" class="notice" hidden aria-labelledby="notice-title"><h2 id="notice-title">Check incomplete • Unknown</h2><p id="notice-text"></p><ul id="unknown-list"></ul><p>No verified copy is available. Try another JPEG or the sample.</p></section>
+  <section id="report" hidden aria-label="Detected hidden data">
+    <div class="file-summary"><img class="preview" id="preview" alt="Selected photo preview"><div class="file-details"><p class="file-name"><span id="file-name"></span><span class="file-status" id="file-status"></span></p><p class="subtle file-meta" id="file-meta"></p></div></div>
+    <div class="choices-help"><p class="subtle">Why flagged? Read each reason. Uncheck <strong>Remove</strong> to keep a field or dismiss its flag.</p><button type="button" class="text-button" id="undo-choice" disabled>Undo choice</button></div>
+    <table class="findings" aria-label="Hidden metadata and removal choices"><thead><tr><th scope="col">Hidden data</th><th scope="col">Found in file</th><th scope="col">What this can reveal</th><th scope="col">Remove</th></tr></thead><tbody id="rows"></tbody></table>
+    <div class="actions"><div><p>Your original stays unchanged.</p><p class="subtle" id="selection-help">Selections apply only when you press Remove selected.</p></div><div class="action-buttons"><button type="button" id="remove" disabled>Remove selected</button></div></div>
+  </section>
+  <section class="result" id="result" hidden aria-labelledby="result-title">
+    <div class="result-copy"><p class="subtle" id="result-label">Result • File re-read</p><h2 id="result-title" tabindex="-1"></h2><p class="subtle">Supported hidden fields only; not a safety guarantee.</p><a class="button" id="download">Download cleaned copy</a><div><button type="button" id="undo-removal" class="text-button">Undo removal</button></div></div>
+    <table class="comparison" aria-label="Supported metadata groups before and after"><thead><tr><th scope="col"><span class="sr-only">Hidden data</span></th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody id="comparison-rows"></tbody></table>
+  </section>
+  <p class="limit">This checks hidden file data only. It does not check what is visible in the picture.</p>
+  <details class="scope"><summary>What this check can and cannot tell you</summary><p>JPEG only. This prototype reads supported EXIF location, date &amp; time, camera / lens identifiers, and embedded JPEG or JFIF thumbnails. A count is the number of detected groups, not individual tags. Multiple matching tags and EXIF blocks are checked together.</p><p>Unsupported blocks (including XMP, IPTC, ICC profiles, comments, and MakerNotes), GPS timestamps, unreadable values, damaged files, or failed re-reads mean <strong>Unknown</strong>. Removal and download are blocked when the check is incomplete. “Not found” refers only to supported fields; this tool never declares a photo safe.</p><p>Visible faces, addresses, reflections, text, the original filename, and information added by a sharing service are outside this check. A thumbnail may contain an earlier image, so it is treated as one removable group without displaying it. Additional metadata inside a thumbnail also makes the check incomplete.</p><p>Files stay in memory in this tab. No storage, analytics, or network requests are used. Processing has a 6-second limit per operation and can be cancelled. Closing the tab or starting over clears the app’s references; it cannot promise secure erasure of browser memory. Downloaded copies are separate files with a new generic filename.</p></details>
+  <button type="button" id="reset" class="text-button" hidden>Start over / clear photo</button>
+  <noscript><p class="notice">JavaScript is required for local inspection. Nothing has been inspected.</p></noscript>
+</main>
+</div>
+<script id="photo-core">
+function photoCore(request) {
+  'use strict';
+  // Pure byte-in / value-out boundary. No DOM, storage, network, or image decoder.
+  const groups = ['gps', 'date', 'device', 'thumbnail'];
+  const fail = message => { throw new Error(message); };
+  const concat = parts => {
+    const out = new Uint8Array(parts.reduce((n, p) => n + p.length, 0));
+    let at = 0; for (const part of parts) { out.set(part, at); at += part.length; }
+    return out;
+  };
+  const bytes = request.bytes;
+  const empty = () => Object.fromEntries(groups.map(k => [k, []]));
+  const ascii = a => Array.from(a, n => n >= 32 && n < 127 ? String.fromCharCode(n) : n === 0 ? '' : '�').join('').trim();
+  const starts = (a, s) => s.split('').every((v, i) => a[i] === v.charCodeAt(0));
+  function exif(payload, found, unknown, jpegDepth) {
+    const t = payload.slice(6), v = new DataView(t.buffer);
+    if (t.length < 8) fail('Truncated EXIF header.');
+    const le = t[0] === 73 && t[1] === 73;
+    if (!le && !(t[0] === 77 && t[1] === 77)) fail('Unknown EXIF byte order.');
+    const range = (o, n) => { if (!Number.isSafeInteger(o) || o < 0 || o + n > t.length) fail('EXIF points outside its segment.'); };
+    const u16 = o => { range(o, 2); return v.getUint16(o, le); };
+    const u32 = o => { range(o, 4); return v.getUint32(o, le); };
+    if (u16(2) !== 42) fail('Invalid TIFF signature.');
+    const sizes = {1:1,2:1,3:2,4:4,5:8,7:1,9:4,10:8};
+    const occupied = [[0,8]], seen = new Set();
+    const claim = (a, n) => {
+      range(a,n); if (!n) return;
+      if (occupied.some(([b,e]) => a < e && a+n > b)) fail('Overlapping EXIF fields are not supported.');
+      occupied.push([a,a+n]);
+    };
+    const dateTags = [0x132,0x9003,0x9004,0x9010,0x9011,0x9012,0x9290,0x9291,0x9292];
+    const deviceTags = [0x10f,0x110,0xa430,0xa431,0xa433,0xa434,0xa435];
+    // Conservative allowlist: rendering, exposure, and encoding information.
+    const neutral = new Set([0x100,0x101,0x102,0x103,0x106,0x112,0x115,0x11a,0x11b,0x11c,0x128,
+      0x829a,0x829d,0x8822,0x8827,0x8830,0x9000,0x9101,0x9102,0x9201,0x9202,0x9203,0x9204,
+      0x9205,0x9206,0x9207,0x9208,0x9209,0x920a,0xa000,0xa001,0xa002,0xa003,0xa20e,0xa20f,
+      0xa210,0xa217,0xa300,0xa301,0xa401,0xa402,0xa403,0xa404,0xa405,0xa406,0xa407,0xa408,0xa409,0xa40a,0xa40c,0xa432]);
+    function readIFD(offset, kind, depth) {
+      if (!offset) return null;
+      if (depth > 3 || seen.has(offset)) fail('Cyclic or excessively nested EXIF.');
+      seen.add(offset);
+      const count = u16(offset);
+      if (count > 256) fail('EXIF entry limit exceeded.');
+      claim(offset, 2 + count*12 + 4);
+      const node = {kind, entries:[], child:null, gps:null, next:null, thumb:null};
+      const tags = new Set();
+      for (let i=0; i<count; i++) {
+        const p=offset+2+i*12, tag=u16(p), type=u16(p+2), n=u32(p+4);
+        if (tags.has(tag)) fail('Duplicate EXIF tag in one directory.');
+        tags.add(tag);
+        if (!sizes[type] || n > 65535) fail('Unsupported EXIF field type or count.');
+        const len=n*sizes[type], dataAt=len>4 ? u32(p+8) : p+8;
+        range(dataAt,len); if (len>4) claim(dataAt,len);
+        const e={tag,type,n,data:t.slice(dataAt,dataAt+len),group:null};
+        if ([0x8769,0x8825].includes(tag)) {
+          if (kind !== 'main' || type!==4 || n!==1) fail('Unsupported EXIF directory link.');
+          const target=u32(p+8);
+          if (!target) fail('Empty EXIF directory link.');
+          e.link=tag===0x8769 ? 'child':'gps'; e.target=target;
+        } else if (kind==='thumb') {
+          if (![0x100,0x101,0x103,0x11a,0x11b,0x128,0x201,0x202].includes(tag)) unknown.push('Unsupported thumbnail tag 0x'+tag.toString(16)+'.');
+        } else if (kind==='gps') {
+          e.group='gps';
+          if (tag>31) unknown.push('Unsupported GPS tag.');
+          if ([7,29].includes(tag)) unknown.push('GPS timestamps are outside the supported date handling.');
+        } else if (dateTags.includes(tag)) {
+          if (type!==2) fail('Date field has an unexpected type.');
+          e.group='date'; found.date.push(ascii(e.data)||'Present; value unreadable');
+        } else if (deviceTags.includes(tag)) {
+          if (type!==2) fail('Device field has an unexpected type.');
+          e.group='device'; found.device.push(ascii(e.data)||'Present; value unreadable');
+        } else if (!neutral.has(tag)) unknown.push('Unsupported EXIF tag 0x'+tag.toString(16)+'.');
+        if(e.group==='date'||e.group==='device') {
+          if(!n||e.data[n-1]!==0||e.data.slice(0,-1).some(c=>c<32||c>126)) unknown.push('An EXIF text value could not be interpreted.');
+          if(!ascii(e.data)) unknown.push('An EXIF text value is empty.');
+          if([0x132,0x9003,0x9004].includes(tag)&&!/^\d{4}:(0[1-9]|1[0-2]):(0[1-9]|[12]\d|3[01]) ([01]\d|2[0-3]):[0-5]\d:[0-5]\d$/.test(ascii(e.data))) unknown.push('An EXIF date has an unknown format.');
+        }
+        node.entries.push(e);
+      }
+      for (const e of node.entries.filter(e=>e.link)) node[e.link]=readIFD(e.target,e.link==='gps'?'gps':'exif',depth+1);
+      const next=u32(offset+2+count*12);
+      if (next) {
+        if (kind!=='main') fail('Unsupported additional EXIF directory.');
+        node.next=readIFD(next,'thumb',depth+1);
+      }
+      if (kind==='gps') {
+        const get=tag=>node.entries.find(e=>e.tag===tag);
+        const deg=e=>{
+          if (!e || e.type!==5 || e.n!==3) return null;
+          const d=new DataView(e.data.buffer); let out=0;
+          for(let i=0;i<3;i++){const den=d.getUint32(i*8+4,le); if(!den) return null; const part=d.getUint32(i*8,le)/den;if(i>0&&part>=60)return null;out+=part/[1,60,3600][i];}
+          return out;
+        };
+        const lat=deg(get(2)), lon=deg(get(4)), ns=get(1), ew=get(3);
+        const a=ns&&ascii(ns.data), b=ew&&ascii(ew.data);
+        if(lat!==null&&lon!==null&&lat<=90&&lon<=180&&['N','S'].includes(a)&&['E','W'].includes(b)) {
+          found.gps.push(((a==='S'?-1:1)*lat).toFixed(4)+', '+((b==='W'?-1:1)*lon).toFixed(4));
+        } else {
+          found.gps.push('GPS fields present; coordinates Unknown');
+          unknown.push('GPS coordinates could not be interpreted.');
+        }
+      }
+      if(kind==='thumb') {
+        const scalar=tag=>{
+          const e=node.entries.find(x=>x.tag===tag);
+          if(!e || ![3,4].includes(e.type)||e.n!==1) fail('Incomplete thumbnail directory.');
+          return e.type===3?new DataView(e.data.buffer).getUint16(0,le):new DataView(e.data.buffer).getUint32(0,le);
+        };
+        if(scalar(0x103)!==6) fail('Only JPEG EXIF thumbnails are supported.');
+        const at=scalar(0x201), len=scalar(0x202); claim(at,len);
+        node.thumb=t.slice(at,at+len);
+        if(len<4 || node.thumb[0]!==255 || node.thumb[1]!==216 || node.thumb[len-2]!==255 || node.thumb[len-1]!==217) fail('Invalid embedded thumbnail.');
+        const inner=inspect(node.thumb,jpegDepth+1);
+        if(inner.count||inner.unknown.length) unknown.push('Embedded thumbnail has additional metadata that cannot be checked completely.');
+        found.thumbnail.push('1 preview');
+      }
+      return node;
+    }
+    const root=readIFD(u32(4),'main',0);
+    if(!root) fail('Missing EXIF directory.');
+    occupied.sort((a,b)=>a[0]-b[0]);
+    let cursor=0;
+    for(const [a,b] of [...occupied,[t.length,t.length]]) {
+      if(t.subarray(cursor,a).some(n=>n!==0)) unknown.push('Unmapped EXIF bytes.');
+      cursor=Math.max(cursor,b);
+    }
+    return {root,le};
+  }
+  function rebuild(tree, remove) {
+    function filter(n) {
+      if(!n || (n.kind==='gps'&&remove.has('gps')) || (n.kind==='thumb'&&remove.has('thumbnail'))) return null;
+      const c={...n, child:filter(n.child),gps:filter(n.gps),next:filter(n.next)};
+      c.entries=n.entries.filter(e=>!remove.has(e.group)&&(!e.link||c[e.link]));
+      return c.entries.length || c.next ? c : null;
+    }
+    const root=filter(tree.root); if(!root) return null;
+    const nodes=[];
+    function flatten(n){if(!n)return;nodes.push(n);flatten(n.child);flatten(n.gps);flatten(n.next);}
+    flatten(root);
+    let at=8;
+    for(const n of nodes){n.offset=at;at+=2+12*n.entries.length+4;}
+    for(const n of nodes){
+      n.places=new Map();
+      for(const e of n.entries) if(e.data.length>4){n.places.set(e,at);at+=e.data.length; if(at%2)at++;}
+      if(n.thumb){n.thumbAt=at;at+=n.thumb.length; if(at%2)at++;}
+    }
+    const out=new Uint8Array(at), d=new DataView(out.buffer), le=tree.le;
+    const w16=(p,x)=>d.setUint16(p,x,le), w32=(p,x)=>d.setUint32(p,x,le);
+    out[0]=out[1]=le?73:77;w16(2,42);w32(4,root.offset);
+    for(const n of nodes){
+      w16(n.offset,n.entries.length);
+      n.entries.forEach((e,i)=>{
+        const p=n.offset+2+i*12;w16(p,e.tag);w16(p+2,e.type);w32(p+4,e.n);
+        if(e.link) w32(p+8,n[e.link].offset);
+        else if(n.kind==='thumb'&&e.tag===0x201) {if(e.type===3)w16(p+8,n.thumbAt);else w32(p+8,n.thumbAt);}
+        else if(e.data.length>4){w32(p+8,n.places.get(e));out.set(e.data,n.places.get(e));}
+        else out.set(e.data,p+8);
+      });
+      w32(n.offset+2+12*n.entries.length,n.next?n.next.offset:0);
+      if(n.thumb)out.set(n.thumb,n.thumbAt);
+    }
+    return concat([new Uint8Array([69,120,105,102,0,0]),out]);
+  }
+  function inspect(b, depth=0) {
+    if(depth>1) fail('Nested metadata thumbnails are not supported.');
+    if(!(b instanceof Uint8Array) || b.length<4) fail('Missing or truncated image.');
+    if(b.length>12*1024*1024) fail('File exceeds the 12 MiB limit.');
+    if(b[0]!==255 || b[1]!==216) fail('Unsupported format. Choose a JPEG file; PNG is not supported in this prototype.');
+    const found=empty(),unknown=[],parts=[{raw:b.slice(0,2)}];
+    let p=2, end=false, scans=0, width=0,height=0, segments=0, frames=0;
+    while(p<b.length) {
+      if(++segments>2048) fail('JPEG segment limit exceeded.');
+      const start=p;
+      if(b[p++]!==255) fail('Invalid JPEG marker.');
+      while(b[p]===255)p++;
+      const marker=b[p++];
+      if(marker===217){parts.push({raw:b.slice(start,p)});end=true;if(p!==b.length)unknown.push('Extra data after the JPEG end marker.');break;}
+      if(marker===216||marker===0||marker===1||(marker>=208&&marker<=215)) fail('Unexpected JPEG marker.');
+      if(p+2>b.length)fail('Truncated JPEG segment.');
+      const size=(b[p]<<8)|b[p+1];
+      if(size<2||p+size>b.length) fail('Invalid JPEG segment length.');
+      const payload=b.slice(p+2,p+size),part={raw:b.slice(start,p+size),marker,payload};
+      p+=size;
+      if(marker===225 && starts(payload,'Exif\0\0')) part.tree=exif(payload,found,unknown,depth);
+      else if(marker===224 && starts(payload,'JFIF\0')) {
+        if(payload.length<14)fail('Truncated JFIF header.');
+        const len=3*payload[12]*payload[13];
+        if(payload.length!==14+len) unknown.push('Unmapped JFIF data.');
+        if(len){found.thumbnail.push('1 JFIF preview');part.jfifThumb=true;}
+      } else if(marker>=224&&marker<=239) unknown.push('Unsupported JPEG APP'+(marker-224)+' block (may contain XMP, IPTC, ICC, or other data).');
+      else if(marker===254) unknown.push('JPEG comment is outside the supported fields.');
+      else if(![192,194,196,219,221,218].includes(marker)) unknown.push('Unsupported JPEG encoding marker.');
+      if(marker===192||marker===194){
+        if(payload.length<6)fail('Truncated JPEG frame.');
+        height=(payload[1]<<8)|payload[2];width=(payload[3]<<8)|payload[4];frames++;
+        if(payload[0]!==8 || ![1,3].includes(payload[5]) || payload.length!==6+3*payload[5]) fail('Unsupported JPEG frame layout.');
+        if(!width||!height||width>12000||height>12000||width*height>24000000)fail('Image exceeds the 24 megapixel / 12,000 pixel edge limit.');
+      }
+      parts.push(part);
+      if(marker===218) {
+        scans++;const entropyStart=p;let next=false;
+        while(p<b.length){
+          if(b[p]!==255){p++;continue;}
+          let q=p+1;while(b[q]===255)q++;
+          if(b[q]===0||(b[q]>=208&&b[q]<=215)){p=q+1;continue;}
+          next=true;break;
+        }
+        if(!next)fail('Truncated JPEG image scan.');
+        parts.push({raw:b.slice(entropyStart,p),entropy:true});
+      }
+    }
+    if(!end||!scans||frames!==1)fail('Incomplete or unsupported JPEG structure.');
+    const items=Object.fromEntries(groups.map(k=>[k,{count:found[k].length?1:0,values:k==='thumbnail'&&found[k].length?[found[k].length+' preview'+(found[k].length===1?'':'s')]:[...new Set(found[k])]}]));
+    return {items,count:groups.filter(k=>items[k].count).length,unknown:[...new Set(unknown)],width,height,parts};
+  }
+  const publicReport=r=>({status:r.unknown.length?'unknown':'complete',items:r.items,count:r.unknown.length?null:r.count,unknown:r.unknown,width:r.width,height:r.height});
+  try {
+    const before=inspect(bytes);
+    if(request.action!=='clean')return publicReport(before);
+    if(before.unknown.length)return {...publicReport(before),error:'Unknown: unsupported data prevents a verified copy.'};
+    const remove=new Set(request.remove||[]);
+    if([...remove].some(k=>!groups.includes(k)))fail('Unknown removal selection.');
+    if(!remove.size)fail('Select at least one detected field to remove.');
+    const output=[];
+    for(const part of before.parts){
+      if(part.tree){
+        const payload=rebuild(part.tree,remove);if(!payload)continue;
+        if(payload.length+2>65535)fail('Rebuilt EXIF exceeds the JPEG segment limit.');
+        output.push(new Uint8Array([255,225,(payload.length+2)>>8,(payload.length+2)&255]),payload);
+      } else if(part.jfifThumb&&remove.has('thumbnail')){
+        const h=part.payload.slice(0,14);h[12]=h[13]=0;output.push(new Uint8Array([255,224,0,16]),h);
+      } else output.push(part.raw);
+    }
+    const clean=concat(output),after=inspect(clean);
+    if(after.unknown.length)fail('The copy could not be fully re-read.');
+    for(const key of groups){
+      if(remove.has(key)&&after.items[key].count)fail('Selected fields remain after re-reading.');
+      if(!remove.has(key)&&JSON.stringify(before.items[key])!==JSON.stringify(after.items[key]))fail('An unselected field changed.');
+    }
+    return {status:'complete',before:publicReport(before),after:publicReport(after),bytes:clean};
+  } catch(error) {
+    return {status:'unknown',count:null,items:empty(),unknown:[error.message],error:'Unknown: '+error.message};
+  }
+}
+
+</script>
+<script id="sample-data" type="application/json">"data:image/jpeg;base64,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"</script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const labels={gps:'GPS coordinates',date:'Date & time',device:'Device model',thumbnail:'Embedded thumbnail'};
+const reasons={gps:'Can reveal where a photo was taken.',date:'Can reveal when you were there.',device:'Can identify the device used.',thumbnail:'May preserve an earlier view.'};
+let original=null,report=null,isSample=false,filename='',selection=new Set(),history=[],busy=false,taskId=0,abortTask=null,previewURL=null,downloadURL=null;
+const step=n=>document.querySelectorAll('.steps li').forEach((li,i)=>i===n-1?li.setAttribute('aria-current','step'):li.removeAttribute('aria-current'));
+function speak(text){$('status').textContent=text;}
+function clearResult(){if(downloadURL)URL.revokeObjectURL(downloadURL);downloadURL=null;$('download').removeAttribute('href');$('result').hidden=true;}
+function clearPreview(){if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;$('preview').removeAttribute('src');}
+function setBusy(value){busy=value;$('spinner').hidden=!value;$('cancel').hidden=!value;for(const id of ['choose','sample','reset','undo-removal'])$(id).disabled=value;updateChoices();}
+function updateChoices(){
+  $('remove').disabled=busy||!report||report.status!=='complete'||!selection.size;
+  $('undo-choice').disabled=busy||!history.length;
+  for(const input of $('rows').querySelectorAll('input')){input.disabled=busy||report?.status!=='complete';input.checked=selection.has(input.value);const note=input.closest('td').querySelector('.choice-note');note.textContent=input.checked?'Selected':'Keep / dismissed';}
+  $('selection-help').textContent=selection.size?`${selection.size} group${selection.size===1?'':'s'} selected. Creates a copy, then re-reads it.`:'Nothing selected. Kept fields will remain in the photo.';
+}
+function showUnknown(messages,text='The check could not confirm all hidden data.'){
+  clearResult();$('notice').hidden=false;$('notice-text').textContent=text;$('unknown-list').replaceChildren();
+  for(const message of messages){const li=document.createElement('li');li.textContent=message;$('unknown-list').append(li);}
+}
+function render(){
+  $('report').hidden=false;$('empty').hidden=true;$('reset').hidden=false;$('shell').classList.add('has-file');
+  $('demo-label').hidden=!isSample;$('file-name').textContent=filename;
+  $('file-status').textContent=report.status==='complete'?`• ${report.count} group${report.count===1?'':'s'} found`:'• Unknown';
+  $('file-meta').textContent=isSample?'Fictional EXIF • Bicycle illustration':`${report.width||'?'} × ${report.height||'?'} pixels • Local JPEG`;
+  $('rows').replaceChildren();
+  for(const [key,label] of Object.entries(labels)){
+    const item=report.items[key],found=Boolean(item?.count),tr=document.createElement('tr');
+    const th=document.createElement('th');th.scope='row';th.id='label-'+key;th.textContent=label;
+    const value=document.createElement('td');value.className='value';
+    value.textContent=found?item.values.join(' · ')+(isSample&&['gps','date'].includes(key)?' (fictional)':''):report.status==='complete'?'Not found':'Unknown';
+    const reason=document.createElement('td');reason.className='reason';reason.id='reason-'+key;reason.textContent=reasons[key];
+    const cell=document.createElement('td');cell.className='select-cell';
+    if(found){
+      const lab=document.createElement('label');lab.className='choice';
+      const input=document.createElement('input');input.type='checkbox';input.value=key;input.setAttribute('aria-label','Remove '+label);input.setAttribute('aria-describedby','reason-'+key);
+      input.addEventListener('change',()=>{history.push([...selection]);if(input.checked)selection.add(key);else selection.delete(key);clearResult();step(2);updateChoices();speak(input.checked?`${label} selected for removal.`:`${label} kept. Flag dismissed; the data is still in the photo.`);});
+      const word=document.createElement('span');word.textContent='Remove';lab.append(input,word);const note=document.createElement('span');note.className='choice-note';cell.append(lab,note);
+    }else{const text=document.createElement('span');text.className='subtle';text.textContent=report.status==='complete'?'—':'Unknown';cell.append(text);}
+    tr.append(th,value,reason,cell);$('rows').append(tr);
+  }
+  updateChoices();
+}
+function runCore(request){
+  return new Promise((resolve,reject)=>{
+    let worker,url,timer,done=false;
+    const finish=(error,value)=>{if(done)return;done=true;clearTimeout(timer);worker?.terminate();if(url)URL.revokeObjectURL(url);abortTask=null;error?reject(error):resolve(value);};
+    abortTask=()=>finish(new Error('Cancelled. No copy was created.'));
+    try{
+      const source=photoCore.toString()+'\nself.onmessage=e=>{try{self.postMessage(photoCore(e.data));}catch{self.postMessage({status:"unknown",error:"Unknown: worker failure.",unknown:["Processing failed."]});}};';
+      url=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));worker=new Worker(url);
+      worker.onmessage=e=>finish(null,e.data);worker.onerror=()=>finish(new Error('Unknown: local processing is unavailable in this browser.'));
+      timer=setTimeout(()=>finish(new Error('Unknown: processing exceeded 6 seconds.')),6000);worker.postMessage(request);
+    }catch{finish(new Error('Unknown: this browser could not start a local worker.'));}
+  });
+}
+function readFile(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();let done=false;
+    const finish=(err,value)=>{if(done)return;done=true;clearTimeout(timer);abortTask=null;err?reject(err):resolve(value);};
+    const timer=setTimeout(()=>{finish(new Error('Unknown: reading exceeded 6 seconds.'));reader.abort();},6000);
+    abortTask=()=>{finish(new Error('Cancelled. No copy was created.'));reader.abort();};
+    reader.onload=()=>finish(null,new Uint8Array(reader.result));reader.onerror=()=>finish(new Error('Unknown: file could not be read.'));reader.onabort=()=>finish(new Error('Cancelled. No copy was created.'));reader.readAsArrayBuffer(file);
+  });
+}
+function checkImage(bytes){
+  return new Promise((resolve,reject)=>{
+    const img=new Image(),url=URL.createObjectURL(new Blob([bytes],{type:'image/jpeg'}));let done=false;
+    const finish=error=>{if(done)return;done=true;clearTimeout(timer);img.onload=img.onerror=null;img.removeAttribute('src');URL.revokeObjectURL(url);abortTask=null;error?reject(error):resolve();};
+    const timer=setTimeout(()=>finish(new Error('Unknown: image decoding exceeded 6 seconds.')),6000);
+    abortTask=()=>finish(new Error('Cancelled. No copy was created.'));
+    img.onload=()=>img.naturalWidth&&img.naturalHeight?finish():finish(new Error('Unknown: image could not be decoded.'));
+    img.onerror=()=>finish(new Error('Unknown: image could not be decoded.'));img.src=url;
+  });
+}
+function clearState(){
+  clearResult();clearPreview();original=null;report=null;selection.clear();history=[];filename='';isSample=false;
+  for(const id of ['file-name','file-status','file-meta','notice-text','unknown-list','comparison-rows','result-title'])$(id).replaceChildren();
+  $('report').hidden=true;$('notice').hidden=true;$('demo-label').hidden=true;$('reset').hidden=true;$('empty').hidden=false;$('rows').replaceChildren();$('file').value='';$('shell').classList.remove('has-file');step(1);
+}
+async function load(file,sample=false){
+  if(busy)return;clearState();const id=++taskId;setBusy(true);speak('Reading photo locally…');
+  try{
+    if(file&&file.size>12*1024*1024)throw new Error('Unknown: file exceeds the 12 MiB limit.');
+    isSample=sample;filename=sample?'room-bike.jpg':file.name;
+    let bytes;
+    if(sample){const data=JSON.parse($('sample-data').textContent).split(',')[1];bytes=Uint8Array.from(atob(data),c=>c.charCodeAt(0));}else bytes=await readFile(file);
+    if(id!==taskId)return;const scanned=await runCore({action:'inspect',bytes});if(id!==taskId)return;
+    report=scanned;original=bytes;
+    if(scanned.error){showUnknown(scanned.unknown||[scanned.error]);$('empty').hidden=true;$('reset').hidden=false;original=null;speak('Check incomplete. Unknown. No copy is available.');return;}
+    await checkImage(bytes);if(id!==taskId)return;
+    previewURL=URL.createObjectURL(new Blob([bytes],{type:'image/jpeg'}));$('preview').src=previewURL;
+    $('preview').alt=sample?'Fictional sample: a plain bicycle in an empty room':'Preview of the selected photo';
+    selection=new Set(Object.keys(labels).filter(k=>report.items[k].count));render();step(2);
+    if(report.status==='unknown'){showUnknown(report.unknown);speak('Check incomplete. Unknown. Review the unsupported data below.');}
+    else speak(`${report.count} supported groups found. ${report.count?'Review the choices, then press Remove selected.':'No supported fields found. This is not a safety guarantee.'}`);
+    $('report-title').focus();
+  }catch(error){if(id===taskId){original=null;report=null;showUnknown([error.message]);$('reset').hidden=false;speak(error.message);}}
+  finally{if(id===taskId)setBusy(false);}
+}
+$('choose').addEventListener('click',()=>$('file').click());
+$('file').addEventListener('change',()=>{const file=$('file').files[0];if(file)load(file);});
+$('sample').addEventListener('click',()=>load(null,true));
+$('undo-choice').addEventListener('click',()=>{if(!history.length)return;selection=new Set(history.pop());clearResult();step(2);updateChoices();speak('Last choice undone. Review your removal selections.');});
+$('undo-removal').addEventListener('click',()=>{clearResult();step(2);speak('Removal undone in this tab. The original is still loaded. Previously downloaded files are unchanged.');$('remove').focus();});
+$('reset').addEventListener('click',()=>{taskId++;abortTask?.();clearState();setBusy(false);speak('Photo cleared from this session. Choose a photo or try the sample.');$('choose').focus();});
+$('cancel').addEventListener('click',()=>{taskId++;abortTask?.();clearState();setBusy(false);speak('Cancelled. Photo cleared; no copy was created.');$('choose').focus();});
+$('remove').addEventListener('click',async()=>{
+  if(busy||!original||report?.status!=='complete'||!selection.size)return;
+  const id=++taskId;clearResult();setBusy(true);speak('Creating a separate copy and re-reading its bytes…');
+  try{
+    const cleaned=await runCore({action:'clean',bytes:original,remove:[...selection]});if(id!==taskId)return;
+    if(cleaned.status!=='complete'||!cleaned.bytes)throw new Error(cleaned.error||'Unknown: copy verification failed.');
+    await checkImage(cleaned.bytes);if(id!==taskId)return;
+    downloadURL=URL.createObjectURL(new Blob([cleaned.bytes],{type:'image/jpeg'}));$('download').href=downloadURL;
+    const nonce=Array.from(crypto.getRandomValues(new Uint8Array(6)),x=>x.toString(16).padStart(2,'0')).join('');
+    $('download').download='cleaned-photo-'+Date.now()+'-'+nonce+'.jpg';
+    const count=cleaned.after.count;
+    $('result-title').textContent=count===0?'0 metadata items found ✓':`${count} metadata group${count===1?'':'s'} kept`;
+    $('result-label').textContent=(isSample?'Sample result':'Result')+' • File re-read';
+    $('comparison-rows').replaceChildren();
+    for(const [key,label] of Object.entries(labels)){const tr=document.createElement('tr'),th=document.createElement('th');th.scope='row';th.textContent=label;tr.append(th);for(const side of ['before','after']){const td=document.createElement('td');td.textContent=String(cleaned[side].items[key].count);tr.append(td);}$('comparison-rows').append(tr);}
+    $('result').hidden=false;$('notice').hidden=true;step(3);speak(`Copy re-read. ${count} supported metadata groups remain. Download your cleaned copy.`);$('result-title').focus();
+  }catch(error){if(id===taskId){showUnknown([error.message],'The copy could not be verified. Download is unavailable.');speak(error.message);}}
+  finally{if(id===taskId)setBusy(false);}
+});
+$('download').addEventListener('click',()=>{speak('Download requested. Your browser controls the save location; the original stays unchanged.');});
+for(const event of ['dragenter','dragover'])$('dropzone').addEventListener(event,e=>{e.preventDefault();if(!busy)$('choose').classList.add('drag');});
+$('dropzone').addEventListener('dragleave',()=>$('choose').classList.remove('drag'));
+$('dropzone').addEventListener('drop',e=>{e.preventDefault();$('choose').classList.remove('drag');if(busy)return;const files=e.dataTransfer.files;if(files.length!==1){speak('Choose one JPEG at a time. The current photo has not changed.');return;}load(files[0]);});
+window.addEventListener('dragover',e=>e.preventDefault());window.addEventListener('drop',e=>e.preventDefault());
+window.addEventListener('pagehide',()=>{taskId++;abortTask?.();clearResult();clearPreview();original=null;report=null;});
+</script>
+</body>
+</html>
