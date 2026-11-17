@@ -111,7 +111,7 @@ The server itself makes no network requests. Inspection sends metadata values to
 - Full removal can discard unreadable EXIF payloads if their enclosing JPEG segments are structurally valid. Such payloads need not be interpreted to remove their entire regions. A malformed JPEG container is rejected. The web interface conservatively retains its existing error stop when initial EXIF parsing itself throws.
 - Faces, visible addresses/text, reflections, filenames, steganography in encoded pixels/tables and information added by a sharing service are outside the check. Retained image data is not sanitized or recompressed.
 - The browser retains its 6-second operation timeout and Cancel behavior. Files remain in tab memory; clearing references is not secure memory erasure. The CLI/MCP have bounded input sizes but no wall-clock timeout.
-- Automated tests use synthetic APP13/XMP/ICC/MakerNote/COM payloads and JPEG fixtures. They do not cover real macOS `sips` output, phone files or an external MCP host. The desktop preview is checked through HTML/CSS assertions and JavaScript execution in a Node VM. Its rendered appearance at 1440 × 900 and 390 px, and manual accessibility behavior, have not been checked: browser tools were excluded from the November 17 update. The earlier browser review is recorded below. JPEG compatibility is limited to the supported structures described above.
+- Automated tests use synthetic APP13/XMP/ICC/MakerNote/COM payloads and JPEG fixtures. They do not cover real macOS `sips` output, phone files or an external MCP host. The desktop preview is checked through HTML/CSS assertions and JavaScript execution in a Node VM. Manual accessibility behavior (screen readers, keyboard-only use) has not been checked. The browser review is recorded below. JPEG compatibility is limited to the supported structures described above.
 
 ## Tests and recorded results
 
@@ -132,6 +132,7 @@ All of this work falls within the competition window. No pre-existing third-part
 ## Review on November 13, 2026
 
 - The November 13 version of the generated `index.html` was walked through in a headless Chromium browser at desktop (1440 px) and mobile (390 px) widths, from the first screen through the sample flow, with no network requests observed and no page errors.
+- On November 17, 2026, the current `index.html` was opened in a headless Chromium browser at 1440, 1280, 1024 and 390 px widths. The desktop report preview fits without horizontal overflow, the phone layout is unchanged, and the sample flow reached **0 metadata items found** and **Download cleaned copy** at 1440 and 390 px, with no network requests and no page errors.
 - A real-world JPEG with extra data blocks (JFIF, EXIF and a Photoshop/IPTC block) was dropped into the page: the tool reported Unknown, offered **Remove all hidden data**, and the saved copy contained no APPn/COM blocks when re-read with a separate parser, and still opened as a 390 × 844 JPEG.
 
 ## Credits and AI assistance
