@@ -1,1614 +1,191 @@
-Before You Send — pre-implementation test run
-Session date: 2026-11-13
-Runtime: Node v22.23.4
-Command: node --test tests/run.cjs tests/interfaces.test.mjs tests/core-all.test.mjs
-Existing tests unchanged: 52 passed. New interface tests: 21 failed. New core tests: 12 failed.
-Total: 85 tests; 52 passed; 33 failed; 0 skipped. Missing modules/interfaces were expected.
-The following TAP output was captured before creating core.mjs, cli.mjs or mcp/server.mjs.
 
-TAP version 13
-# Subtest: CORE all removes all APP/COM regions: sample
-not ok 1 - CORE all removes all APP/COM regions: sample
-  ---
-  duration_ms: 2.471814
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:8:125'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all removes all APP/COM regions: APP13
-not ok 2 - CORE all removes all APP/COM regions: APP13
-  ---
-  duration_ms: 0.645059
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:8:125'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all removes all APP/COM regions: XMP
-not ok 3 - CORE all removes all APP/COM regions: XMP
-  ---
-  duration_ms: 0.455906
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:8:125'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all removes all APP/COM regions: ICC
-not ok 4 - CORE all removes all APP/COM regions: ICC
-  ---
-  duration_ms: 0.499479
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:8:125'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all removes all APP/COM regions: MakerNote
-not ok 5 - CORE all removes all APP/COM regions: MakerNote
-  ---
-  duration_ms: 0.524908
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:8:125'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all removes all APP/COM regions: COM
-not ok 6 - CORE all removes all APP/COM regions: COM
-  ---
-  duration_ms: 0.431952
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:8:125'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE removes all 16 APP types plus comments, including after a scan
-not ok 7 - CORE removes all 16 APP types plus comments, including after a scan
-  ---
-  duration_ms: 0.807657
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:9:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE preserves compressed scan bytes, FF escapes and restart markers
-not ok 8 - CORE preserves compressed scan bytes, FF escapes and restart markers
-  ---
-  duration_ms: 0.445583
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:10:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all rejects truncated data, PNG, trailing data and unknown encoding
-not ok 9 - CORE all rejects truncated data, PNG, trailing data and unknown encoding
-  ---
-  duration_ms: 2.499481
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:11:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all rejects invalid DQT, DHT, DRI, SOS and empty scans
-not ok 10 - CORE all rejects invalid DQT, DHT, DRI, SOS and empty scans
-  ---
-  duration_ms: 0.96815
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:12:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE all removes JFIF thumbnails and EXIF orientation together
-not ok 11 - CORE all removes JFIF thumbnails and EXIF orientation together
-  ---
-  duration_ms: 0.580927
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:13:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CORE module equals embedded implementation
-not ok 12 - CORE module equals embedded implementation
-  ---
-  duration_ms: 0.477963
-  type: 'test'
-  location: '<repo>/tests/core-all.test.mjs:14:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot find module '<repo>/core.mjs' imported from <repo>/tests/core-all.test.mjs"
-  code: 'ERR_MODULE_NOT_FOUND'
-  stack: |-
-    finalizeResolution (node:internal/modules/esm/resolve:275:11)
-    moduleResolve (node:internal/modules/esm/resolve:865:10)
-    defaultResolve (node:internal/modules/esm/resolve:989:11)
-    #cachedDefaultResolve (node:internal/modules/esm/loader:747:20)
-    ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)
-    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)
-    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:680:36)
-    TracingChannel.tracePromise (node:diagnostics_channel:350:14)
-    ModuleLoader.import (node:internal/modules/esm/loader:679:21)
-    defaultImportModuleDynamicallyForModule (node:internal/modules/esm/utils:222:31)
-  ...
-# Subtest: CLI inspects a fictional sample from a file
-not ok 13 - CLI inspects a fictional sample from a file
-  ---
-  duration_ms: 50.306612
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:16:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:16:77)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.start (node:internal/test_runner/test:944:17)
-    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
-  ...
-# Subtest: CLI inspects binary stdin using - or omitted path
-not ok 14 - CLI inspects binary stdin using - or omitted path
-  ---
-  duration_ms: 32.590938
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:17:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:17:120)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
-  ...
-# Subtest: CLI cleans, re-reads and preserves original
-not ok 15 - CLI cleans, re-reads and preserves original
-  ---
-  duration_ms: 31.838422
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:18:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:18:77)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI preserves only requested date and device groups
-not ok 16 - CLI preserves only requested date and device groups
-  ---
-  duration_ms: 41.360212
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:19:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:19:85)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI clean accepts binary stdin
-not ok 17 - CLI clean accepts binary stdin
-  ---
-  duration_ms: 31.328999
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:20:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:20:64)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI explicit --all removes APP13
-not ok 18 - CLI explicit --all removes APP13
-  ---
-  duration_ms: 28.857052
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:21:50'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:21:144)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI explicit --all removes XMP
-not ok 19 - CLI explicit --all removes XMP
-  ---
-  duration_ms: 27.08887
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:21:50'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:21:144)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI explicit --all removes ICC
-not ok 20 - CLI explicit --all removes ICC
-  ---
-  duration_ms: 27.765502
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:21:50'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:21:144)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI explicit --all removes MakerNote
-not ok 21 - CLI explicit --all removes MakerNote
-  ---
-  duration_ms: 29.663896
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:21:50'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:21:144)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI explicit --all removes COM
-not ok 22 - CLI explicit --all removes COM
-  ---
-  duration_ms: 30.019052
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:21:50'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:21:144)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI rejects Unknown without explicit --all
-not ok 23 - CLI rejects Unknown without explicit --all
-  ---
-  duration_ms: 26.917375
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:22:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:22:180)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI refuses malformed JPEG and PNG even with --all
-not ok 24 - CLI refuses malformed JPEG and PNG even with --all
-  ---
-  duration_ms: 29.87423
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:23:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:23:177)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI rejects bad arguments, missing file, and conflicting choices
-not ok 25 - CLI rejects bad arguments, missing file, and conflicting choices
-  ---
-  duration_ms: 26.694406
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:24:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:24:327)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: CLI never overwrites originals, existing files, symlinks or hard links
-not ok 26 - CLI never overwrites originals, existing files, symlinks or hard links
-  ---
-  duration_ms: 26.742841
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:25:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    JSON stdout is required: node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/cli.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: true
-  actual: ''
-  operator: '=='
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    cli (file:///<repo>/tests/interfaces.test.mjs:10:176)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:25:311)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: MCP initializes and lists both documented tool schemas
-not ok 27 - MCP initializes and lists both documented tool schemas
-  ---
-  duration_ms: 28.786622
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:26:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/mcp/server.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-    
-    1 !== 0
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 0
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    rpc (file:///<repo>/tests/interfaces.test.mjs:11:237)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:26:76)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: MCP inspect matches CLI report
-not ok 28 - MCP inspect matches CLI report
-  ---
-  duration_ms: 29.580736
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:27:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/mcp/server.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-    
-    1 !== 0
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 0
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    rpc (file:///<repo>/tests/interfaces.test.mjs:11:237)
-    call (file:///<repo>/tests/interfaces.test.mjs:15:33)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:27:64)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: MCP clean supports selective keep
-not ok 29 - MCP clean supports selective keep
-  ---
-  duration_ms: 28.111063
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:28:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/mcp/server.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-    
-    1 !== 0
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 0
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    rpc (file:///<repo>/tests/interfaces.test.mjs:11:237)
-    call (file:///<repo>/tests/interfaces.test.mjs:15:33)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:28:67)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: MCP clean all re-reads unsupported metadata and writes a new file
-not ok 30 - MCP clean all re-reads unsupported metadata and writes a new file
-  ---
-  duration_ms: 27.074104
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:29:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/mcp/server.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-    
-    1 !== 0
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 0
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    rpc (file:///<repo>/tests/interfaces.test.mjs:11:237)
-    call (file:///<repo>/tests/interfaces.test.mjs:15:33)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:29:135)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: MCP reports tool failures without creating output
-not ok 31 - MCP reports tool failures without creating output
-  ---
-  duration_ms: 26.596986
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:30:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/mcp/server.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-    
-    1 !== 0
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 0
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    rpc (file:///<repo>/tests/interfaces.test.mjs:11:237)
-    call (file:///<repo>/tests/interfaces.test.mjs:15:33)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:30:261)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: MCP validates required fields, types, enums and unexpected keys
-not ok 32 - MCP validates required fields, types, enums and unexpected keys
-  ---
-  duration_ms: 28.893979
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:31:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/mcp/server.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-    
-    1 !== 0
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 0
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    rpc (file:///<repo>/tests/interfaces.test.mjs:11:237)
-    call (file:///<repo>/tests/interfaces.test.mjs:15:33)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:31:337)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: MCP handles parse errors, unknown methods/tools, notifications and ping
-not ok 33 - MCP handles parse errors, unknown methods/tools, notifications and ping
-  ---
-  duration_ms: 26.453961
-  type: 'test'
-  location: '<repo>/tests/interfaces.test.mjs:32:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    node:internal/modules/cjs/loader:1433
-      throw err;
-      ^
-    
-    Error: Cannot find module '<repo>/mcp/server.mjs'
-        at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-        at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-        at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-        at Function._load (node:internal/modules/cjs/loader:1216:25)
-        at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-        at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-        at node:internal/main/run_main_module:36:49 {
-      code: 'MODULE_NOT_FOUND',
-      requireStack: []
-    }
-    
-    Node.js v22.23.4
-    
-    
-    1 !== 0
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 0
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
-    defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
-    resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
-    Function._load (node:internal/modules/cjs/loader:1216:25)
-    wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
-    Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
-    node:internal/main/run_main_module:36:49 {
-    rpc (file:///<repo>/tests/interfaces.test.mjs:11:237)
-    TestContext.<anonymous> (file:///<repo>/tests/interfaces.test.mjs:32:93)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  ...
-# Subtest: NORMAL: sample contains four real EXIF groups and fictional values
-ok 34 - NORMAL: sample contains four real EXIF groups and fictional values
-  ---
-  duration_ms: 5.532112
-  type: 'test'
-  ...
-# Subtest: NORMAL: clean, re-read, preserve original and every non-EXIF byte
-ok 35 - NORMAL: clean, re-read, preserve original and every non-EXIF byte
-  ---
-  duration_ms: 6.537506
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps
-ok 36 - NORMAL: selective removal gps
-  ---
-  duration_ms: 3.55076
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal date
-ok 37 - NORMAL: selective removal date
-  ---
-  duration_ms: 2.724646
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps, date
-ok 38 - NORMAL: selective removal gps, date
-  ---
-  duration_ms: 2.902874
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal device
-ok 39 - NORMAL: selective removal device
-  ---
-  duration_ms: 2.848925
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps, device
-ok 40 - NORMAL: selective removal gps, device
-  ---
-  duration_ms: 3.614125
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal date, device
-ok 41 - NORMAL: selective removal date, device
-  ---
-  duration_ms: 2.449229
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps, date, device
-ok 42 - NORMAL: selective removal gps, date, device
-  ---
-  duration_ms: 2.137174
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal thumbnail
-ok 43 - NORMAL: selective removal thumbnail
-  ---
-  duration_ms: 1.189308
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps, thumbnail
-ok 44 - NORMAL: selective removal gps, thumbnail
-  ---
-  duration_ms: 0.705646
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal date, thumbnail
-ok 45 - NORMAL: selective removal date, thumbnail
-  ---
-  duration_ms: 0.735175
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps, date, thumbnail
-ok 46 - NORMAL: selective removal gps, date, thumbnail
-  ---
-  duration_ms: 0.691381
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal device, thumbnail
-ok 47 - NORMAL: selective removal device, thumbnail
-  ---
-  duration_ms: 0.777485
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps, device, thumbnail
-ok 48 - NORMAL: selective removal gps, device, thumbnail
-  ---
-  duration_ms: 0.800601
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal date, device, thumbnail
-ok 49 - NORMAL: selective removal date, device, thumbnail
-  ---
-  duration_ms: 0.765925
-  type: 'test'
-  ...
-# Subtest: NORMAL: selective removal gps, date, device, thumbnail
-ok 50 - NORMAL: selective removal gps, date, device, thumbnail
-  ---
-  duration_ms: 0.612847
-  type: 'test'
-  ...
-# Subtest: NORMAL: a JPEG with no metadata reports zero supported groups
-ok 51 - NORMAL: a JPEG with no metadata reports zero supported groups
-  ---
-  duration_ms: 0.367807
-  type: 'test'
-  ...
-# Subtest: NORMAL: big-endian EXIF is read and rebuilt correctly
-ok 52 - NORMAL: big-endian EXIF is read and rebuilt correctly
-  ---
-  duration_ms: 0.926507
-  type: 'test'
-  ...
-# Subtest: NORMAL: multiple date tags are one group and all removed
-ok 53 - NORMAL: multiple date tags are one group and all removed
-  ---
-  duration_ms: 0.844017
-  type: 'test'
-  ...
-# Subtest: NORMAL: orientation remains when selected identifiers are erased
-ok 54 - NORMAL: orientation remains when selected identifiers are erased
-  ---
-  duration_ms: 0.812845
-  type: 'test'
-  ...
-# Subtest: NORMAL: JFIF RGB thumbnail is genuinely removed
-ok 55 - NORMAL: JFIF RGB thumbnail is genuinely removed
-  ---
-  duration_ms: 0.655087
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: duplicate EXIF segments do not evade removal or inflate group counts
-ok 56 - AMBIGUOUS: duplicate EXIF segments do not evade removal or inflate group counts
-  ---
-  duration_ms: 3.870178
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: multiple thumbnails are one group with an accurate preview count
-ok 57 - AMBIGUOUS: multiple thumbnails are one group with an accurate preview count
-  ---
-  duration_ms: 3.560411
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: GPS plus XMP gives Unknown, never a verified zero
-ok 58 - AMBIGUOUS: GPS plus XMP gives Unknown, never a verified zero
-  ---
-  duration_ms: 2.412785
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: IPTC blocks verified download
-ok 59 - AMBIGUOUS: IPTC blocks verified download
-  ---
-  duration_ms: 1.073759
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: ICC blocks verified download
-ok 60 - AMBIGUOUS: ICC blocks verified download
-  ---
-  duration_ms: 1.035627
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: comment blocks verified download
-ok 61 - AMBIGUOUS: comment blocks verified download
-  ---
-  duration_ms: 0.93923
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: MakerNote produces Unknown
-ok 62 - AMBIGUOUS: MakerNote produces Unknown
-  ---
-  duration_ms: 1.061829
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: invalid date text is not reported as fully understood
-ok 63 - AMBIGUOUS: invalid date text is not reported as fully understood
-  ---
-  duration_ms: 1.132795
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: unrecognized or non-ASCII text is Unknown
-ok 64 - AMBIGUOUS: unrecognized or non-ASCII text is Unknown
-  ---
-  duration_ms: 1.106753
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: HTML-shaped device name remains inert text in the parser
-ok 65 - AMBIGUOUS: HTML-shaped device name remains inert text in the parser
-  ---
-  duration_ms: 1.432254
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: trailing bytes make the result Unknown
-ok 66 - AMBIGUOUS: trailing bytes make the result Unknown
-  ---
-  duration_ms: 0.91047
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: unmapped nonzero EXIF bytes are not silently ignored
-ok 67 - AMBIGUOUS: unmapped nonzero EXIF bytes are not silently ignored
-  ---
-  duration_ms: 1.150803
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: no selection does not silently remove anything
-ok 68 - AMBIGUOUS: no selection does not silently remove anything
-  ---
-  duration_ms: 1.255101
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: zero GPS denominator is Unknown
-ok 69 - AMBIGUOUS: zero GPS denominator is Unknown
-  ---
-  duration_ms: 1.176847
-  type: 'test'
-  ...
-# Subtest: AMBIGUOUS: metadata inside a retained thumbnail blocks verification
-ok 70 - AMBIGUOUS: metadata inside a retained thumbnail blocks verification
-  ---
-  duration_ms: 2.141218
-  type: 'test'
-  ...
-# Subtest: FAILURE: unsupported PNG input gives Unknown
-ok 71 - FAILURE: unsupported PNG input gives Unknown
-  ---
-  duration_ms: 0.152773
-  type: 'test'
-  ...
-# Subtest: FAILURE: empty, missing and truncated files give Unknown
-ok 72 - FAILURE: empty, missing and truncated files give Unknown
-  ---
-  duration_ms: 1.20688
-  type: 'test'
-  ...
-# Subtest: FAILURE: bad JPEG segment length is rejected
-ok 73 - FAILURE: bad JPEG segment length is rejected
-  ---
-  duration_ms: 0.177653
-  type: 'test'
-  ...
-# Subtest: FAILURE: out-of-bounds TIFF directory is rejected
-ok 74 - FAILURE: out-of-bounds TIFF directory is rejected
-  ---
-  duration_ms: 0.198975
-  type: 'test'
-  ...
-# Subtest: FAILURE: cyclic TIFF directories are rejected
-ok 75 - FAILURE: cyclic TIFF directories are rejected
-  ---
-  duration_ms: 0.284522
-  type: 'test'
-  ...
-# Subtest: FAILURE: TIFF directory entry limit is enforced
-ok 76 - FAILURE: TIFF directory entry limit is enforced
-  ---
-  duration_ms: 0.189071
-  type: 'test'
-  ...
-# Subtest: FAILURE: duplicate tag in a directory is rejected
-ok 77 - FAILURE: duplicate tag in a directory is rejected
-  ---
-  duration_ms: 0.265394
-  type: 'test'
-  ...
-# Subtest: FAILURE: unsupported TIFF field type is rejected
-ok 78 - FAILURE: unsupported TIFF field type is rejected
-  ---
-  duration_ms: 0.285772
-  type: 'test'
-  ...
-# Subtest: FAILURE: EXIF data overlapping an IFD is rejected
-ok 79 - FAILURE: EXIF data overlapping an IFD is rejected
-  ---
-  duration_ms: 0.2478
-  type: 'test'
-  ...
-# Subtest: FAILURE: file size limit is enforced
-ok 80 - FAILURE: file size limit is enforced
-  ---
-  duration_ms: 0.812946
-  type: 'test'
-  ...
-# Subtest: FAILURE: decoded dimension limit is checked before preview
-ok 81 - FAILURE: decoded dimension limit is checked before preview
-  ---
-  duration_ms: 0.210749
-  type: 'test'
-  ...
-# Subtest: FAILURE: broken embedded thumbnail prevents cleaning
-ok 82 - FAILURE: broken embedded thumbnail prevents cleaning
-  ---
-  duration_ms: 1.363807
-  type: 'test'
-  ...
-# Subtest: FAILURE: malformed mutations cannot crash the pure function
-ok 83 - FAILURE: malformed mutations cannot crash the pure function
-  ---
-  duration_ms: 38.038065
-  type: 'test'
-  ...
-# Subtest: STATIC: scripts parse; assets and network policy are self-contained
-ok 84 - STATIC: scripts parse; assets and network policy are self-contained
-  ---
-  duration_ms: 1.472093
-  type: 'test'
-  ...
-# Subtest: NORMAL: worker structured-clone round trip preserves byte input and output
-ok 85 - NORMAL: worker structured-clone round trip preserves byte input and output
-  ---
-  duration_ms: 56.840535
-  type: 'test'
-  ...
-1..85
-# tests 85
-# suites 0
-# pass 52
-# fail 33
-# cancelled 0
-# skipped 0
-# todo 0
-# duration_ms 755.737157
+> before-you-send@0.2.0 test
+> node scripts/build.mjs --check && node --test tests/run.cjs tests/*.test.mjs
+
+✔ CORE all removes all APP/COM regions: sample (12.913404ms)
+✔ CORE all removes all APP/COM regions: APP13 (0.868212ms)
+✔ CORE all removes all APP/COM regions: XMP (2.484107ms)
+✔ CORE all removes all APP/COM regions: ICC (0.810636ms)
+✔ CORE all removes all APP/COM regions: MakerNote (0.961998ms)
+✔ CORE all removes all APP/COM regions: COM (0.788135ms)
+✔ CORE removes all 16 APP types plus comments, including after a scan (1.407411ms)
+✔ CORE preserves compressed scan bytes, FF escapes and restart markers (0.438112ms)
+✔ CORE all rejects truncated data, PNG, trailing data and unknown encoding (1.528503ms)
+✔ CORE all rejects invalid DQT, DHT, DRI, SOS and empty scans (1.14541ms)
+✔ CORE all removes JFIF thumbnails and EXIF orientation together (0.832215ms)
+✔ CORE module equals embedded implementation (1.87975ms)
+✔ CORE all preserves multiple progressive scans and removes metadata between them (0.600174ms)
+✔ CORE all rejects size and dimension limits (1.331224ms)
+✖ Initial report preview contains three fictional rows with values, reasons and example selections (1.702945ms)
+✖ Preview layout fills desktop width while leaving original and 390px styles unchanged (1.449937ms)
+✖ Both sample buttons load the same fictional photo and hide the initial preview (13.594002ms)
+✖ Additional sample action disables during processing and recovers on cancellation (1.227392ms)
+✔ CLI inspects a fictional sample from a file (64.426105ms)
+✔ CLI inspects binary stdin using - or omitted path (98.749532ms)
+✔ CLI cleans, re-reads and preserves original (118.342007ms)
+✔ CLI preserves only requested date and device groups (43.369456ms)
+✔ CLI clean accepts binary stdin (39.865889ms)
+✔ CLI explicit --all removes APP13 (38.672558ms)
+✔ CLI explicit --all removes XMP (40.487694ms)
+✔ CLI explicit --all removes ICC (39.008783ms)
+✔ CLI explicit --all removes MakerNote (39.785674ms)
+✔ CLI explicit --all removes COM (39.07256ms)
+✔ CLI rejects Unknown without explicit --all (74.090353ms)
+✔ CLI refuses malformed JPEG and PNG even with --all (106.195815ms)
+✔ CLI rejects bad arguments, missing file, and conflicting choices (215.940418ms)
+✔ CLI never overwrites originals, existing files, symlinks or hard links (145.18268ms)
+✔ MCP initializes and lists both documented tool schemas (33.111672ms)
+✔ MCP inspect matches CLI report (82.320589ms)
+✔ MCP clean supports selective keep (43.975418ms)
+✔ MCP clean all re-reads unsupported metadata and writes a new file (40.186694ms)
+✔ MCP reports tool failures without creating output (104.618464ms)
+✔ MCP validates required fields, types, enums and unexpected keys (212.938845ms)
+✔ MCP handles parse errors, unknown methods/tools, notifications and ping (33.374596ms)
+✔ CLI rejects oversized regular files and stdin without output (105.542432ms)
+✔ MCP rejects malformed JPEG and PNG in all mode (77.440032ms)
+✔ MCP requires initialization and negotiates its supported version (33.807702ms)
+✔ MCP bounds messages and recovers after an oversized line (34.24559ms)
+✔ NORMAL: sample contains four real EXIF groups and fictional values (8.867994ms)
+✔ NORMAL: clean, re-read, preserve original and every non-EXIF byte (5.755588ms)
+✔ NORMAL: selective removal gps (3.407205ms)
+✔ NORMAL: selective removal date (3.135937ms)
+✔ NORMAL: selective removal gps, date (3.800971ms)
+✔ NORMAL: selective removal device (3.480412ms)
+✔ NORMAL: selective removal gps, device (2.921602ms)
+✔ NORMAL: selective removal date, device (3.417831ms)
+✔ NORMAL: selective removal gps, date, device (2.815916ms)
+✔ NORMAL: selective removal thumbnail (1.127116ms)
+✔ NORMAL: selective removal gps, thumbnail (0.884156ms)
+✔ NORMAL: selective removal date, thumbnail (0.854908ms)
+✔ NORMAL: selective removal gps, date, thumbnail (0.678677ms)
+✔ NORMAL: selective removal device, thumbnail (0.613808ms)
+✔ NORMAL: selective removal gps, device, thumbnail (0.547909ms)
+✔ NORMAL: selective removal date, device, thumbnail (0.600212ms)
+✔ NORMAL: selective removal gps, date, device, thumbnail (0.464316ms)
+✔ NORMAL: a JPEG with no metadata reports zero supported groups (0.339888ms)
+✔ NORMAL: big-endian EXIF is read and rebuilt correctly (0.804828ms)
+✔ NORMAL: multiple date tags are one group and all removed (0.732693ms)
+✔ NORMAL: orientation remains when selected identifiers are erased (0.754683ms)
+✔ NORMAL: JFIF RGB thumbnail is genuinely removed (0.646852ms)
+✔ AMBIGUOUS: duplicate EXIF segments do not evade removal or inflate group counts (1.212036ms)
+✔ AMBIGUOUS: multiple thumbnails are one group with an accurate preview count (0.946947ms)
+✔ AMBIGUOUS: GPS plus XMP gives Unknown, never a verified zero (1.044666ms)
+✔ AMBIGUOUS: IPTC blocks verified download (0.319686ms)
+✔ AMBIGUOUS: ICC blocks verified download (0.313717ms)
+✔ AMBIGUOUS: comment blocks verified download (0.26921ms)
+✔ AMBIGUOUS: MakerNote produces Unknown (0.489185ms)
+✔ AMBIGUOUS: invalid date text is not reported as fully understood (0.436481ms)
+✔ AMBIGUOUS: unrecognized or non-ASCII text is Unknown (0.415216ms)
+✔ AMBIGUOUS: HTML-shaped device name remains inert text in the parser (0.727567ms)
+✔ AMBIGUOUS: trailing bytes make the result Unknown (0.343021ms)
+✔ AMBIGUOUS: unmapped nonzero EXIF bytes are not silently ignored (1.197755ms)
+✔ AMBIGUOUS: no selection does not silently remove anything (3.963126ms)
+✔ AMBIGUOUS: zero GPS denominator is Unknown (0.445634ms)
+✔ AMBIGUOUS: metadata inside a retained thumbnail blocks verification (0.883056ms)
+✔ FAILURE: unsupported PNG input gives Unknown (0.127633ms)
+✔ FAILURE: empty, missing and truncated files give Unknown (0.499198ms)
+✔ FAILURE: bad JPEG segment length is rejected (0.127671ms)
+✔ FAILURE: out-of-bounds TIFF directory is rejected (0.153216ms)
+✔ FAILURE: cyclic TIFF directories are rejected (0.366071ms)
+✔ FAILURE: TIFF directory entry limit is enforced (0.147719ms)
+✔ FAILURE: duplicate tag in a directory is rejected (0.251766ms)
+✔ FAILURE: unsupported TIFF field type is rejected (0.252469ms)
+✔ FAILURE: EXIF data overlapping an IFD is rejected (0.269737ms)
+✔ FAILURE: file size limit is enforced (0.209951ms)
+✔ FAILURE: decoded dimension limit is checked before preview (0.166389ms)
+✔ FAILURE: broken embedded thumbnail prevents cleaning (0.271033ms)
+✔ FAILURE: malformed mutations cannot crash the pure function (52.027864ms)
+✔ STATIC: scripts parse; assets and network policy are self-contained (1.835486ms)
+✔ NORMAL: worker structured-clone round trip preserves byte input and output (39.683866ms)
+✔ UI all-data action appears only for eligible Unknown, and disables while busy (4.674337ms)
+✔ UI all-data button calls shared core and displays verified region counts and warning (2.727499ms)
+✔ UI blocks download if fresh verification is Unknown or regions remain (2.45142ms)
+✔ UI blocks download if the browser cannot decode the copy (1.308544ms)
+✔ UI cancellation ignores a late all-data result (1.39722ms)
+✔ UI undo restores the Unknown fallback so all-data cleaning can be retried (2.587321ms)
+ℹ tests 101
+ℹ suites 0
+ℹ pass 97
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2019.202377
+
+✖ failing tests:
+
+test at tests/initial-preview.test.mjs:29:1
+✖ Initial report preview contains three fictional rows with values, reasons and example selections (1.702945ms)
+  AssertionError [ERR_ASSERTION]: Preview belongs inside the initial section, so it hides with that section
+      at TestContext.<anonymous> (file://<repo>/tests/initial-preview.test.mjs:31:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/initial-preview.test.mjs:46:1
+✖ Preview layout fills desktop width while leaving original and 390px styles unchanged (1.449937ms)
+  AssertionError [ERR_ASSERTION]: Dedicated desktop-only preview styles exist
+      at TestContext.<anonymous> (file://<repo>/tests/initial-preview.test.mjs:50:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/initial-preview.test.mjs:61:1
+✖ Both sample buttons load the same fictional photo and hide the initial preview (13.594002ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'undefined'
+  - 'function'
+
+      at TestContext.<anonymous> (file://<repo>/tests/initial-preview.test.mjs:63:28)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/initial-preview.test.mjs:76:1
+✖ Additional sample action disables during processing and recovers on cancellation (1.227392ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'undefined'
+  - 'function'
+
+      at TestContext.<anonymous> (file://<repo>/tests/initial-preview.test.mjs:77:26)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

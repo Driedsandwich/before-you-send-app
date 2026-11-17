@@ -10,7 +10,7 @@ Photos stay on the device; there are no uploads, accounts, CDN assets, web fonts
 
 ## Try it and build
 
-Open the committed `index.html` directly. It works as a single offline file. Use **Try sample photo** for the generated bicycle illustration with fictional metadata. Only the Unknown fallback and its result display have been added to the existing screen flow.
+Open the committed `index.html` directly. It works as a single offline file. Use **Try sample photo** for the generated bicycle illustration with fictional metadata. On desktop, the first screen includes a three-row fictional report preview showing hidden fields, values, reasons and example removal selections. Its **Try sample photo** button opens the same sample inspection as the header button. The preview is hidden at widths of 1,000 px or less.
 
 Development and local interfaces require Node 22 or later. No installation step is necessary:
 
@@ -19,7 +19,7 @@ npm run build
 npm test
 ```
 
-`core.mjs` is the single source of inspection, removal and verification logic: pure JavaScript, byte input and value output, no DOM, filesystem, network or image decoder. `scripts/build.mjs` embeds it between `<!-- core:start -->` and `<!-- core:end -->` in `index.html`, retaining the existing worker boundary. Commit the built HTML. Do not edit its generated core directly. `npm test` first rejects a stale embedded copy. Build is deterministic and works from any working directory. `.npmrc` disables network access and update notifications for the package commands.
+`core.mjs` is the single source of inspection, removal and verification logic: pure JavaScript, byte input and value output, no DOM, filesystem, network or image decoder. `scripts/build.mjs` embeds it between `<!-- core:start -->` and `<!-- core:end -->` in `index.html`, retaining the existing worker boundary. Commit the built HTML. Do not edit its generated core directly. `npm test` first rejects a stale embedded copy. Build is deterministic and works from any working directory. The build and tests use Node’s built-in modules and require no package downloads.
 
 ## CLI usage
 
@@ -111,26 +111,31 @@ The server itself makes no network requests. Inspection sends metadata values to
 - Full removal can discard unreadable EXIF payloads if their enclosing JPEG segments are structurally valid. Such payloads need not be interpreted to remove their entire regions. A malformed JPEG container is rejected. The web interface conservatively retains its existing error stop when initial EXIF parsing itself throws.
 - Faces, visible addresses/text, reflections, filenames, steganography in encoded pixels/tables and information added by a sharing service are outside the check. Retained image data is not sanitized or recompressed.
 - The browser retains its 6-second operation timeout and Cancel behavior. Files remain in tab memory; clearing references is not secure memory erasure. The CLI/MCP have bounded input sizes but no wall-clock timeout.
-- No real macOS `sips` output, phone files, external MCP host, browser rendering or manual accessibility behavior was tested in this revision. No browser automation or extensions were used. Tests generate synthetic APP13/XMP/ICC/MakerNote/COM payloads and JPEG fixtures. This is broader tested metadata handling, not a claim that every real-world JPEG is supported.
+- Automated tests use synthetic APP13/XMP/ICC/MakerNote/COM payloads and JPEG fixtures. They do not cover real macOS `sips` output, phone files or an external MCP host. The desktop preview is checked through HTML/CSS assertions and JavaScript execution in a Node VM. Its rendered appearance at 1440 × 900 and 390 px, and manual accessibility behavior, have not been checked: browser tools were excluded from the November 17 update. The earlier browser review is recorded below. JPEG compatibility is limited to the supported structures described above.
 
 ## Tests and recorded results
 
-`tests/run.cjs` is unchanged: **52 existing tests**. Before implementation, 21 new CLI/MCP tests and 12 core tests were written and run on Node **v22.23.4**. `RESULTS_BEFORE.txt` records **85 total: 52 passed, 33 failed**, because the interfaces/core module were missing. After implementation, 12 additional boundary, progressive-scan and VM UI-wiring tests were added. `RESULTS_AFTER.txt` records **97 total: 97 passed, 0 failed**, including all 52 original tests.
+The suite contains **101 tests**, including the **52 original tests** in `tests/run.cjs`. All existing tests are unchanged. Four initial-screen regression tests were added before the desktop preview implementation and run on Node **v26.13.0**. `RESULTS_BEFORE.txt` records **101 total: 97 passed, 4 failed**; all four failures concern the missing preview. `RESULTS_AFTER.txt` records **101 total: 101 passed, 0 failed** after implementation. `npm run build` also completed successfully.
+
+The new checks cover the fictional three-row table, preservation of the original CSS and header text, desktop-only layout rules, both sample buttons loading the same four-group report, hiding and restoring the initial section, and disabling the added button during processing and recovering after cancellation. These are source and VM checks, not rendered viewport tests.
 
 Tests cover binary stdin, selective keep, explicit all-data removal, fresh inspection, unchanged original and image bytes, all 16 APP types, comments between scans, unsupported inputs, file limits, exclusive output creation, MCP schemas/lifecycle/errors/message limits, Unknown UI eligibility, failed verification/decoding and cancellation. VM tests exercise JavaScript wiring without a browser; they do not establish visual usability. The generated core is compared with the imported module. Fixtures use fictional values and an in-test 1×1 gray JPEG plus the original illustration. Raw test logs are committed.
 
 ## Work within the build window (2026-10-17–2026-11-22)
 
-This revision was prepared on **2026-11-13** in the supplied workspace. It adds the shared core and deterministic single-file build, local CLI and MCP interfaces, the explicit all-data removal path, test-first logs, further regression coverage and these usage/limitations notes. The starting prototype was supplied as an existing repository snapshot; its earlier creation date and competition eligibility were not independently verified. No claim is made that the entire prototype originated in this revision. All demo/test data used here is fictional. Nothing was published, pushed, submitted to Devpost or written to an external application.
+- **2026-11-12:** The first prototype and the fictional bicycle sample illustration were created.
+- **2026-11-13:** The shared core, deterministic single-file build, CLI, MCP interface and tests were added, together with the explicit all-data removal path.
+- **2026-11-17:** The desktop initial screen gained a fictional report preview and a sample button. Documentation and regression tests were updated.
+
+All of this work falls within the competition window. No pre-existing third-party material is included in the project. Demonstrations and automated test fixtures use fictional data.
 
 ## Review on November 13, 2026
 
-- The first prototype was built on November 12, 2026, within the build window; this repository starts from it.
-- After this update, the generated `index.html` was walked through in a headless Chromium browser at desktop (1440 px) and mobile (390 px) widths, from the first screen through the sample flow, with no network requests observed and no page errors.
+- The November 13 version of the generated `index.html` was walked through in a headless Chromium browser at desktop (1440 px) and mobile (390 px) widths, from the first screen through the sample flow, with no network requests observed and no page errors.
 - A real-world JPEG with extra data blocks (JFIF, EXIF and a Photoshop/IPTC block) was dropped into the page: the tool reported Unknown, offered **Remove all hidden data**, and the saved copy contained no APPn/COM blocks when re-read with a separate parser, and still opened as a 390 × 844 JPEG.
 
 ## Credits and AI assistance
 
-- Original prototype disclosure: prototype code and tests were generated with OpenAI Codex from written specifications and design mockups; planning, review, and browser testing used Anthropic Claude.
-- This revision's implementation, added tests, documentation and local verification were assisted by OpenAI Codex. No browser testing was performed for this revision. The student remains responsible for reviewing the changes and explaining AI assistance in the submission.
-- The sample image is a generated bicycle illustration with fictional metadata. New fixtures are generated locally in tests; no personal photos, secrets or API keys were added.
+I used **OpenAI Codex** to help generate code and tests, and **Anthropic Claude** for planning, review and browser checks. I selected the project and its design direction from options explored with AI assistance.
+
+The sample photo is a fictional bicycle illustration created on **2026-11-12**, with fictional metadata. Test fixtures are generated locally. No pre-existing third-party material, personal photos, secrets or API keys are included.
